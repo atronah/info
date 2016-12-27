@@ -34,3 +34,4 @@ But, if you have rights, you can find info about them [here](https://gitlab.com/
 See also
 ========
 - [Knowledge base](knowledge/README.md) - base of tips and tricks, which I can't store in my memory.
+- [Best practices](best%20practices/README.md) - regulations and rules of development process.
