@@ -1,6 +1,8 @@
 commit message
 --------------
-Commit message have to match the patten 
+_some of rules was borrowed from [AngularJS](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md) project_
+
+Commit message have to match the pattern:
 ```
 <changes type>(<changes scope>): <short description> [#<ticket number>]
 
