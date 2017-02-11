@@ -7,4 +7,10 @@ Index
 ### IT
 - programming
 	- CLI (Command line interface)
-    	- [batch](IT/programming/cli/batch.md)
+        - [batch](IT/programming/cli/batch.md)
+- dbms
+    - [mysql](IT/dbms/mysql.md)
+- vcs
+    - [svn](IT/vcs/svn.md)
+- operating system
+    - [unix](operating system/unix.md)
