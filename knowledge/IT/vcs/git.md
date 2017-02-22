@@ -94,13 +94,13 @@ and replay these patches in the client branch as if it was based directly off th
 
 double and triple dots
 ----------------------
+Some images got from [StackOverflow topic](http://stackoverflow.com/questions/462974/what-are-the-differences-between-double-dot-and-triple-dot-in-git-com)
 
-|  ![](git_images/git_log_doubledot_euler.png)  | ![](git_images/git_log_doubledot.png)  | 
-|---|---|
-| ![](git_images/git_log_tripledot_euler.png)|  ![](git_images/git_log_tripledot_branches.png)  |
+| ![](git_images/git_log_doubledot_euler.png) | ![](git_images/git_log_tripledot_euler.png)     | 
+|---------------------------------------------|-------------------------------------------------|
+| ![](git_images/git_log_doubledot.png)       | ![](git_images/git_log_tripledot_branches.png)  |
+| ![](git_images/git_log_rev_list.png)        | ![](git_images/git-diff-help.png)               | 
 
-![](git_images/git_log_rev_list.png) 
-![](git_images/git-diff-help.png)
  
 
 
