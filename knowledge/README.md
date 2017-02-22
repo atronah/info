@@ -12,5 +12,6 @@ Index
     - [mysql](IT/dbms/mysql.md)
 - vcs
     - [svn](IT/vcs/svn.md)
+    - [git](IT/vcs/git.md)
 - operating system
     - [unix](operating system/unix.md)
