@@ -94,8 +94,15 @@ and replay these patches in the client branch as if it was based directly off th
 
 double and triple dots
 ----------------------
-![](git-diff-help.png) ![](git_log_doubledot.png) ![](git_log_doubledot_euler.png) ![](git_log_rev_list.png)
-![](git_log_tripledot_branches.png) ![](git_log_tripledot_euler.png) ![](git_rebase_client_server.png)
+
+|  ![](git_images/git_log_doubledot_euler.png)  | ![](git_images/git_log_doubledot.png)  | 
+|---|---|
+| ![](git_images/git_log_tripledot_euler.png)|  ![](git_images/git_log_tripledot_branches.png)  |
+
+![](git_images/git_log_rev_list.png) 
+![](git_images/git-diff-help.png)
+ 
+
 
 Links
 -----
