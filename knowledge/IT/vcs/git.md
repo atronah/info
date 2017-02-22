@@ -67,3 +67,42 @@ recomended config:
 [gui]
     encoding = utf-8
 ```
+
+
+gitrevisions
+------------
+`@{u}` (“u” stands for “upstream”) it resolves to the latest commit on this branch on the remote ([merge-vs-rebase](http://mislav.net/2013/02/merge-vs-rebase/))
+- parents of commit (usual commit has only one parent, but merge can has more)
+    - `<ref>^0` - commit itself
+    - `<rev>^` (equivalent `<rev>^1`) - first parent of commit 
+    - `<rev>^<n>` - `<n>`th parent of commit
+- `<rev>~<n>` - `<n>`-th ancestor of commit (note that `<rev>~3` is equivalent to `<rev>^^^` (great-grandparent of of commit) or `<rev>^1^1^1`
+- specifying type of commit
+    - `<ref>^{tag}` - can be used to ensure that rev identifies an existing tag object.
+- `<ref>^{:/regexp}`- the youngest commit which is reachable from the `<rev>` and which is reachable from any ref
+- `<ref>^{/regexp}` - the youngest commit which is reachable from the `<rev>` and which is reachable from the `<rev>`
+
+
+rebase
+------
+see more in [git rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
+
+`git rebase --onto master server client` - Take the client branch, figure out the patches since it diverged from the server branch, 
+and replay these patches in the client branch as if it was based directly off the master branch instead:
+![rebasing client onto master](git_images/git_rebase_client_server.png)
+
+
+double and triple dots
+----------------------
+![](git-diff-help.png) ![](git_log_doubledot.png) ![](git_log_doubledot_euler.png) ![](git_log_rev_list.png)
+![](git_log_tripledot_branches.png) ![](git_log_tripledot_euler.png) ![](git_rebase_client_server.png)
+
+Links
+-----
+- https://githowto.com/ru
+- http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/ru/ch05.html
+- https://githowto.com/ru/history
+- https://habrahabr.ru/post/161009/
+- http://mislav.net/2013/02/merge-vs-rebase/
+- https://git-scm.com/book/ru/v1/Ветвление-в-Git-Перемещение
+- http://stackoverflow.com/questions/269352/patch-vs-hotfix-vs-maintenance-release-vs-service-pack-vs
