@@ -1,18 +1,21 @@
-Автозапуск:
+Services
+--------
+
+### services autorun
 ```systemctl is-enabled <service-name>```
 ```systemctl enable <service-name>```
 
-Лог подключений
-```journalctl -f```
+
+Networking
+----------
+
+### TCP monitoring
+
+```tcpdump```
 
 
-SELinux enable access for smb
-```chcon -R -t samba_share_t /my_sharing_folder```
+### add GRE protocol to firewalld rules to use pppd
 
-
-Отслеживание tcp трафика:```tcpdump```
-
-Добавление GRE протокола в правила файрвола для работы pppd
 ```
 firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -p gre -j ACCEPT
 firewall-cmd --permanent --direct --add-rule ipv6 filter INPUT 0 -p gre -j ACCEPT
@@ -20,15 +23,38 @@ firewall-cmd --reload
 ```
 
 
-GNOME
+SELinux
+-------
+
+### enable access for smb
+```chcon -R -t samba_share_t /my_sharing_folder```
+
+
+Gnome
 ------
 
-Расположение кнопок управления окном (свернуть, закрыть).
-- справа: ```gconftool-2 --set /apps/metacity/general/button_layout --type string "menu:minimize,maximize,close" ```
-- слева: ```gconftool-2 --set /apps/metacity/general/button_layout --type string "close,minimize,maximize:menu"```
+### change Window's buttons layout
+- left-side: ```gconftool-2 --set /apps/metacity/general/button_layout --type string "menu:minimize,maximize,close" ```
+- right-side: ```gconftool-2 --set /apps/metacity/general/button_layout --type string "close,minimize,maximize:menu"```
 
 
-Отобразить все значки в трее
+### show all apps in system tray
 ```
 gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
+```
+
+
+Samba
+-----
+
+### copy to samba share folder by smbclient
+
+`smbclient \\host\\sharename -A auth.info -c "put src_folder/src_file to_folder\\$dst_file_name"`
+
+where `auth.info` is file which contains authentication information like that:
+
+```
+USERNAME=atronah
+PASSWORD=qwerty
+DOMAIN=WORKGROUP
 ```

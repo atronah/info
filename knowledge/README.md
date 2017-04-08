@@ -6,12 +6,11 @@ Index
 -----
 ### IT
 - windows
-    - [batch](IT/windows/batch.md)
+    - [batch](it/windows/batch.md)
 - dbms
-    - [mysql](IT/dbms/mysql.md)
+    - [mysql](it/dbms/mysql.md)
 - vcs
-    - [svn](IT/vcs/svn.md)
-    - [git](IT/vcs/git.md)
+    - [svn](it/vcs/svn.md)
+    - [git](it/vcs/git.md)
 - unix
     - [common](unix/common.md)
-    - [smb](unix/smb.md)

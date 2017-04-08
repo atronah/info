@@ -1,4 +1,5 @@
-Вывести все коммиты определенного пользователя
+### show all commits of specified user
+
 ```
 svn log | sed -n '/username/,/-----$/ p'
 ```
