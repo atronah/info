@@ -14,3 +14,4 @@ Index
     - [git](it/vcs/git.md)
 - unix
     - [common](unix/common.md)
+    - [fedora](unix/fedora.md)
