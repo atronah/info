@@ -14,3 +14,4 @@ Index
     - [git](IT/vcs/git.md)
 - unix
     - [common](unix/common.md)
+    - [smb](unix/smb.md)
