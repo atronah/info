@@ -12,9 +12,9 @@ Networking
 ### WiFi by NetworkManager (CLI)
 
 - `nmcli radio wifi` - check wifi enabled 
-- `nmcli device rescan` - rescan available wireless networks 
-- `nmcli device list` - show available wireless networks
-- `nmcli device connect <SSID> password <password>` - connect to wireless network with SSID <SSID>
+- `nmcli device wifi rescan` - rescan available wireless networks 
+- `nmcli device wifi list` - show available wireless networks
+- `nmcli device wifi connect <SSID> password <password>` - connect to wireless network with SSID <SSID>
 
 
 ### TCP monitoring
