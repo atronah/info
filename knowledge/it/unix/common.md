@@ -1,3 +1,10 @@
+Commands
+--------
+- `type -a <command>` - display all locations containing an executable named `<command>`;
+- `fuser -m -u -v /path/to/file` - display all processes, which use file. 
+With key `-k` you can kill all this processes.
+
+
 Services
 --------
 
