@@ -52,7 +52,7 @@ IPV6INIT=no
 
 ### TCP monitoring
 
-```tcpdump```
+`tcpdump`
 
 
 ### add GRE protocol to firewalld rules to use pppd
