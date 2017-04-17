@@ -23,6 +23,30 @@ Networking
 - `nmcli device wifi list` - show available wireless networks
 - `nmcli device wifi connect <SSID> password <password>` - connect to wireless network with SSID <SSID>
 
+### disable IPv6
+
+[by sysctl](https://www.nbalonso.com/disable-ipv6-on-fedora-20/):
+- `sysctl -a | grep ipv6 | less` - checks
+- `sysctl -w net.ipv6.conf.all.disable_ipv6=1` - The easiest ways is to set the value with sysctl itself
+- The second and a bit longer way is to write the change to /etc/sysctl.conf and then ask sysctl to read the config file. You can do it with:
+```
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+sysctl -p
+```
+
+[by modprobe](http://linoxide.com/linux-how-to/disable-ipv6-centos-fedora-rhel/):
+- `echo "install ipv6 /bin/true" >> /etc/modprobe.d/disable_ipv6.conf` - dummy install (need reboot after changes)
+ 
+
+
+adds options into `/etc/sysconfig/network`
+```
+NETWORKING_IPV6=no
+IPV6INIT=no
+```
+
+[see also](https://www.g-loaded.eu/2008/05/12/how-to-disable-ipv6-in-fedora-and-centos/)
+
 
 ### TCP monitoring
 
