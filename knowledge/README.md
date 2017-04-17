@@ -9,11 +9,11 @@ Index
     - [batch](it/windows/batch.md)
 - dbms
     - [mysql](it/dbms/mysql.md)
-    - [firebird](it/dbms/[firebird.md)
+    - [firebird](it/dbms/firebird.md)
 - vcs
     - [svn](it/vcs/svn.md)
     - [git](it/vcs/git.md)
 - unix
-    - [common](unix/common.md)
-    - [fedora](unix/fedora.md)
-    - [vim](unix/vim.md)
+    - [common](it/unix/common.md)
+    - [fedora](it/unix/fedora.md)
+    - [vim](it/unix/vim.md)
