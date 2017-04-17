@@ -37,6 +37,12 @@ firewall-cmd --permanent --direct --add-rule ipv6 filter INPUT 0 -p gre -j ACCEP
 firewall-cmd --reload
 ```
 
+### Open port by iptables
+```
+iptables -I INPUT -p tcp --dport 25 -m state --state NEW -j ACCEPT
+service iptables save
+```
+
 
 Processes
 ---------
