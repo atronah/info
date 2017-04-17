@@ -15,3 +15,4 @@ Index
 - unix
     - [common](unix/common.md)
     - [fedora](unix/fedora.md)
+    - [vim](unix/vim.md)
