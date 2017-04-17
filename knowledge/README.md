@@ -9,6 +9,7 @@ Index
     - [batch](it/windows/batch.md)
 - dbms
     - [mysql](it/dbms/mysql.md)
+    - [firebird](it/dbms/[firebird.md)
 - vcs
     - [svn](it/vcs/svn.md)
     - [git](it/vcs/git.md)
