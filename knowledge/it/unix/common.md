@@ -25,6 +25,8 @@ Networking
 
 ### disable IPv6
 
+- `lsmod | grep ipv6` -- shows modules
+
 [by sysctl](https://www.nbalonso.com/disable-ipv6-on-fedora-20/):
 - `sysctl -a | grep ipv6 | less` - checks
 - `sysctl -w net.ipv6.conf.all.disable_ipv6=1` - The easiest ways is to set the value with sysctl itself
