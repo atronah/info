@@ -17,3 +17,4 @@ Index
     - [common](it/unix/common.md)
     - [fedora](it/unix/fedora.md)
     - [vim](it/unix/vim.md)
+    - [ssh](it/unix/ssh.md)
