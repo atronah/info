@@ -6,6 +6,7 @@ Index
 -----
 ### IT
 - windows
+    - [common](it/windows/common.md)
     - [batch](it/windows/batch.md)
 - dbms
     - [mysql](it/dbms/mysql.md)
