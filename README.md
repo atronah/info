@@ -7,12 +7,21 @@ and I am programmer or something like this.
 This git project intends to collect all about my others projects and useful (at least for me) technical info in one place. 
 You can consider it as a hall of my programming world.
 
+
+-----------------
+
+
 About me
 ========
 - Real name: Anufriev Artem
 - Born: in 1990 in Ukhta town, Russia
 - English level: elementary 
 - Skills: Python, Qt, MySQL, Firebird, C++, Git, SVN
+
+
+-----------------
+
+
 
 Projects
 ========
@@ -31,7 +40,27 @@ My work projects are in private repositories.
 But, if you have rights, you can find info about them [here](https://gitlab.com/mplus/info).
 
 
-See also
-========
-- [Knowledge base](knowledge/README.md) - base of tips and tricks, which I can't store in my memory.
-- [Best practices](best%20practices/README.md) - regulations and rules of development process.
+-----------------
+
+
+Knowledge base
+==============
+A collection of useful information about different things
+
+Index
+-----
+### IT
+- windows
+    - [common](it/windows/common.md)
+    - [batch](it/windows/batch.md)
+- dbms
+    - [mysql](it/dbms/mysql.md)
+    - [firebird](it/dbms/firebird.md)
+- vcs
+    - [svn](it/vcs/svn.md)
+    - [git](it/vcs/git.md)
+- unix
+    - [common](it/unix/common.md)
+    - [fedora](it/unix/fedora.md)
+    - [vim](it/unix/vim.md)
+    - [ssh](it/unix/ssh.md)
