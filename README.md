@@ -64,3 +64,4 @@ Index
     - [fedora](it/unix/fedora.md)
     - [vim](it/unix/vim.md)
     - [ssh](it/unix/ssh.md)
+    - [bash](it/unix/bash.md)
