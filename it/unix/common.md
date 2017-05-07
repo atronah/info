@@ -113,3 +113,14 @@ USERNAME=atronah
 PASSWORD=qwerty
 DOMAIN=WORKGROUP
 ```
+
+### mount samba
+info from [ubuntu.com](https://wiki.ubuntu.com/MountWindowsSharesPermanently)
+
+- Mounting unprotected (guest) network folders:
+`//servername/sharename  /media/windowsshare  cifs  guest,uid=1000,iocharset=utf8  0  0`
+- Mount password protected network folders:
+`//servername/sharename  /media/windowsshare  cifs  username=msusername,password=mspassword,iocharset=utf8,sec=ntlm  0 0`
+- Mount password protected network folders with use credentials file:
+`//servername/sharename /media/windowsshare cifs credentials=/home/user/.smbcredentials,iocharset=utf8,sec=ntlm 0 0`
+where `.smbcredentials` has `0600` permisions and contains 2 lines: `username=msusername` and `password=msuserpassword`
