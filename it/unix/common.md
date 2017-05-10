@@ -77,6 +77,12 @@ firewall-cmd --info-zone=FegoraServer
 ```
 
 
+### Check ports listening
+```
+netstat -avp | grep 3050
+```
+
+
 Processes
 ---------
 
