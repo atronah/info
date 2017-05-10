@@ -69,6 +69,13 @@ iptables -I INPUT -p tcp --dport 25 -m state --state NEW -j ACCEPT
 service iptables save
 ```
 
+### Open port by firewall-cmd
+```
+firewall-cmd --zone=FegoraServer --permanent --add-port=3050/tcp
+firewall-cmd --reload
+firewall-cmd --info-zone=FegoraServer
+```
+
 
 Processes
 ---------
