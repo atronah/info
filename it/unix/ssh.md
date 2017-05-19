@@ -1,3 +1,10 @@
+Authentification by key (without password)
+------------------------------------------
+
+- `ssh-keygen` - generate ssh key pair (publick and private keys)
+- `ssh-copy-id user@server` - copy your public ssh key into `/home/user/.ssh/authorized_keys` file on server
+- `ssh-copy-id "user@server -p 2222"` - use `ssh-copy-id` with additional ssh options, etc port number
+
 
 Forwarding ports
 ----------------
@@ -17,6 +24,26 @@ about not-lo `bind_address`:
 > Note that if you use OpenSSH sshd server, the server's `GatewayPorts` option needs to be enabled
 > (set to yes or clientspecified) for this to work (check file `/etc/ssh/sshd_config` on the server).
 > Otherwise (default value for this option is no), the server will always force the port to be bound on the loopback interface only.
+
+### Use ssh_config
+If you want to forward port every time when you connect to host `my_host`, you can describe it in `ssh_config` file:
+```
+Host my_host
+        HostName=my_host.ru
+        Port=2222
+        User=user
+        RemoteForward *:30080 127.0.0.1:80
+        RemoteForward *:30081 127.0.0.1:81
+        ServerAliveInterval 30
+        ServerAliveCountMax 3
+        StrictHostKeyChecking no
+```
+
+### Permanent ssh
+to prevent losing connection you can use `autossh` utility, which monitoring connection and reconnect if it need
+```
+autossh -M 20000 -f -N my_host
+```
 
 
 Links
