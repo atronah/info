@@ -156,3 +156,4 @@ Links
 - http://mislav.net/2013/02/merge-vs-rebase/
 - https://git-scm.com/book/ru/v1/Ветвление-в-Git-Перемещение
 - http://stackoverflow.com/questions/269352/patch-vs-hotfix-vs-maintenance-release-vs-service-pack-vs
+- https://github.com/imangazaliev/git-tips
