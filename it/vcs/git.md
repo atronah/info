@@ -64,9 +64,9 @@ my config:
     pulr = pull --rebase
 	wdiff = diff --word-diff=color
     ; format to html with link to commit (like "http://gitlab.com/{group}/{project}/%H")
-    html = log --pretty=format:'<h2>%ad <a href="http://gitlab.com/{group}/{project}/%H">%h</a></h2>%n<h3>%s</h3>%n<pre>%b</pre>' --date=short --author=atronah
+    html = log --pretty=format:'<h3>%ad <a href="http://gitlab.com/{group}/{project}/%H">%h</a> %s</h3>%n<pre>%b</pre>%n' --date=short --author=atronah
     ; extended html with three arguments: date, group name, project name.
-    htmlex = "! f() { git html | sed -n -e \"/<h2>$1/,/<\\/pre>/ p\" | sed "s/{group}/$2/g" | sed "s/{project}/$3/g" ; }; f"
+    htmlex = "! f() { git html | sed -n -e \"/<h3>$1/,/<\\/pre>/ p\" | sed "s/{group}/$2/g" | sed "s/{project}/$3/g"; }; f"
 
 [gui]
     encoding = utf-8

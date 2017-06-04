@@ -1,5 +1,14 @@
 **tags**: windows, bat, shell
 
+Paths
+-----
+
+### dirname
+[source](http://stackoverflow.com/questions/778135/how-do-i-get-the-equivalent-of-dirname-in-a-batch-file)
+- `for %%F in (%filename%) do set dirname=%%~dpF`
+- `%filename%\..\ ` - **need check**
+
+
 SETLOCAL
 --------
 ### Localization enviroment changes

@@ -1,10 +1,10 @@
 Introduction
 ============
-Welcome to my small virtual world. 
-I am atronah (yes, this word is from _TES III: Morrowind_), 
+Welcome to my small virtual world.
+I am atronah (yes, this word is from _TES III: Morrowind_),
 and I am programmer or something like this.
 
-This git project intends to collect all about my others projects and useful (at least for me) technical info in one place. 
+This git project intends to collect all about my others projects and useful (at least for me) technical info in one place.
 You can consider it as a hall of my programming world.
 
 
@@ -15,7 +15,7 @@ About me
 ========
 - Real name: Anufriev Artem
 - Born: in 1990 in Ukhta town, Russia
-- English level: elementary 
+- English level: elementary
 - Skills: Python, Qt, MySQL, Firebird, C++, Git, SVN
 
 
@@ -50,6 +50,8 @@ A collection of useful information about different things
 Index
 -----
 ### IT
+- apps
+    - [7z](it/apps/7z.md)
 - windows
     - [common](it/windows/common.md)
     - [batch](it/windows/batch.md)
@@ -65,3 +67,5 @@ Index
     - [vim](it/unix/vim.md)
     - [ssh](it/unix/ssh.md)
     - [bash](it/unix/bash.md)
+- dev
+    - [python](it/dev/python.md)
