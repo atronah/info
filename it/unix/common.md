@@ -87,6 +87,13 @@ netstat -avp | grep 3050
 ```
 
 
+Files
+-----
+- `lsof -a -d 1-999 -c <command name>` - This will list all open files in the / directory,
+which is everything on a linux filesystem.
+Just tested and it shows only REG and DIR. For info by PID use option `-p <pid>` instead `-c`.
+(from [serverfault.com](https://serverfault.com/questions/106398/lsof-restrict-output-to-physical-files-only-how))
+
 
 Processes
 ---------
