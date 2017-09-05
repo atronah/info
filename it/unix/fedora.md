@@ -1,6 +1,16 @@
 Fedora
 ======
 
+Environment
+-----------
+
+### language
+[source](https://www.linuxquestions.org/questions/red-hat-31/changing-default-language-from-command-line-438947/)
+```
+# dnf install -y system-config-language
+# system-config-language
+```
+
 
 Upgrade
 -------
