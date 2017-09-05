@@ -67,5 +67,6 @@ Index
     - [vim](it/unix/vim.md)
     - [ssh](it/unix/ssh.md)
     - [bash](it/unix/bash.md)
+    - [vpn](it/unix/vpn.md)
 - dev
     - [python](it/dev/python.md)
