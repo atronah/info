@@ -73,6 +73,13 @@ my config:
 ```
 
 
+status
+------
+
+[git-branch-status script](https://github.com/bill-auger/git-branch-status)
+
+
+
 gitrevisions
 ------------
 `@{u}` (“u” stands for “upstream”) it resolves to the latest commit on this branch on the remote ([merge-vs-rebase](http://mislav.net/2013/02/merge-vs-rebase/))
