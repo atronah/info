@@ -70,3 +70,4 @@ Index
     - [vpn](it/unix/vpn.md)
 - dev
     - [python](it/dev/python.md)
+    - [xml](it/dev/xml.md)
