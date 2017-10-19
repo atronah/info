@@ -16,7 +16,7 @@ About me
 - Real name: Anufriev Artem
 - Born: in 1990 in Ukhta town, Russia
 - English level: elementary
-- Skills: Python, Qt, MySQL, Firebird, C++, Git, SVN
+- Skills: Python, Qt, MySQL, Firebird PSQL, C++, Git, SVN
 
 
 -----------------
@@ -29,9 +29,9 @@ Projects
 Personal
 --------
 
-- [atromio](https://gitlab.com/atronah/atromio) - app (only idea at the moment) to organise data about money spending.
-- [firebird_utils](https://gitlab.com/atronah/firebird_utils) - useful script and others for working with Firebird dbms.
-- [sql_deploy](https://gitlab.com/atronah/sql_deploy) - tool to concatenate sql-scripts into single scripts in correct order (described in config file)
+- [atromio](https://github.com/atronah/atromio) - app (only idea at the moment) to organise data about money spending.
+- [firebird_utils](https://github.com/atronah/firebird_utils) - useful script and others for working with Firebird dbms.
+- [sql_deploy](https://github.com/atronah/sql_deploy) - tool to concatenate sql-scripts into single scripts in correct order (described in config file)
 
 
 Work
