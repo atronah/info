@@ -1,3 +1,6 @@
+Moved to [GitHub](https://github.com/atronah/info)
+=================
+
 Introduction
 ============
 Welcome to my small virtual world.
