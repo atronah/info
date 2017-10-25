@@ -91,6 +91,7 @@ Files
 which is everything on a linux filesystem.
 Just tested and it shows only REG and DIR. For info by PID use option `-p <pid>` instead `-c`.
 (from [serverfault.com](https://serverfault.com/questions/106398/lsof-restrict-output-to-physical-files-only-how))
+- `lsof /path/to/file` - display all processes, which use file.
 - `fuser -m -u -v /path/to/file` - display all processes, which use file.
 With key `-k` you can kill all this processes.
 
