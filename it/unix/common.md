@@ -15,6 +15,7 @@ edit `~/.inputrc` and add following lines:
 
 Commands
 --------
+
 - `type -a <command>` - display all locations containing an executable named `<command>`;
 
 
@@ -33,6 +34,7 @@ add line `username    ALL=(ALL)   ALL` into `sudoers` file.
 ### allow user use sudo without password
 
 add line `username    ALL=(ALL)   NOPASSWD: ALL` into `sudoers` file.
+
 
 Services
 --------
@@ -100,9 +102,9 @@ service iptables save
 
 ### Open port by firewall-cmd
 ```
-firewall-cmd --zone=FegoraServer --permanent --add-port=3050/tcp
+firewall-cmd --zone=FedoraServer --permanent --add-port=3050/tcp
 firewall-cmd --reload
-firewall-cmd --info-zone=FegoraServer
+firewall-cmd --info-zone=FedoraServer
 ```
 
 
