@@ -36,3 +36,9 @@ Frameworks
 Articles
 --------
 - [Microservices with Python, RabbitMQ and Nameko](http://brunorocha.org/python/microservices-with-python-rabbitmq-and-nameko.html)
+
+
+Environment
+===========
+
+- `python -m venv flask` - creates virtual environment (need Python 3.4 or above)
