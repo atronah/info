@@ -1,9 +1,31 @@
 Authentification by key (without password)
 ------------------------------------------
 
+### Common
+
+Create `authorized_keys` file:
+- `mkdir ~/.ssh`
+- `chmod 0700 ~/.ssh`
+- `touch ~/.ssh/authorized_keys`
+- `chmod 0644 ~/.ssh/authorized_keys`
+
+
+### From unix
+
 - `ssh-keygen` - generate ssh key pair (publick and private keys)
 - `ssh-copy-id user@server` - copy your public ssh key into `/home/user/.ssh/authorized_keys` file on server
 - `ssh-copy-id "user@server -p 2222"` - use `ssh-copy-id` with additional ssh options, etc port number
+
+
+### From windows
+- use `puttygen.exe` app from `PuTTY`-tools to generate RSA key pair:
+private (`.ppk`-file) and public (`.pub` or any other).
+- copy your public key (`.pub` file) to remote host, for example, by WinSCP
+- add your public key into `authorized_keys` file by command:
+`ssh-keygen -i -f my_public_key.pub >> ~/.ssh/authorized_keys`
+- connect to remote host with your user
+(if you use non-root user, either specify `Connection/Data/Auto-login username` or add `username@` before host name)
+
 
 
 Forwarding ports
