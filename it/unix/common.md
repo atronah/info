@@ -18,6 +18,22 @@ Commands
 - `type -a <command>` - display all locations containing an executable named `<command>`;
 
 
+sudo
+----
+
+Preferred way to edit `sudoers` (`/etc/sudoers`) is use command
+`sudo visudo -f /etc/sudoers.d/my_override`.
+
+
+
+### allow user use sudo
+
+add line `username    ALL=(ALL)   ALL` into `sudoers` file.
+
+### allow user use sudo without password
+
+add line `username    ALL=(ALL)   NOPASSWD: ALL` into `sudoers` file.
+
 Services
 --------
 
