@@ -129,6 +129,7 @@ Just tested and it shows only REG and DIR. For info by PID use option `-p <pid>`
 - `lsof +L1` - shows used files which were deleted
 - `fuser -m -u -v /path/to/file` - display all processes, which use file.
 With key `-k` you can kill all this processes.
+- ``for i in *.tif; do mv -i $i \`basename $i .tif\`; done`` - renames multiple files by removing the extension
 
 
 Processes
