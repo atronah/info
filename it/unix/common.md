@@ -1,3 +1,18 @@
+bash using
+----------
+
+### Get previos command with the same prefix
+
+edit `~/.inputrc` and add following lines:
+
+```
+# arrow up
+"\e[A":history-search-backward
+# arrow down
+"\e[B":history-search-forward
+```
+
+
 Commands
 --------
 - `type -a <command>` - display all locations containing an executable named `<command>`;
