@@ -13,6 +13,11 @@ edit `~/.inputrc` and add following lines:
 ```
 
 
+### Get OS ID from os-release file
+
+`echo $(. /etc/os-release; echo "$ID")`
+
+
 Commands
 --------
 
