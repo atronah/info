@@ -17,6 +17,8 @@ edit `~/.inputrc` and add following lines:
 
 `echo $(. /etc/os-release; echo "$ID")`
 
+Dot as command is equivalent to `source` command.
+
 
 Commands
 --------
