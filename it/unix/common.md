@@ -193,3 +193,11 @@ info from [ubuntu.com](https://wiki.ubuntu.com/MountWindowsSharesPermanently)
 - Mount password protected network folders with use credentials file:
 `//servername/sharename /media/windowsshare cifs credentials=/home/user/.smbcredentials,iocharset=utf8,sec=ntlm 0 0`
 where `.smbcredentials` has `0600` permisions and contains 2 lines: `username=msusername` and `password=msuserpassword`
+
+
+Locale, Keyboard layout
+-----------------------
+
+- `loadkeys <locale>` - temporary load locale for current session (for example `loadkeys us`)
+- `/etc/X11/org.conf` or `/etc/X11/xorg.conf.d/00_keyboard.conf` - permanent changing locales
+- `localectl` - utility to manage locales
