@@ -69,6 +69,7 @@ Index
     - [fedora](it/unix/fedora.md)
     - [vim](it/unix/vim.md)
     - [ssh](it/unix/ssh.md)
+    - [smb.md](it/unix/smb.md)
     - [bash](it/unix/bash.md)
     - [vpn](it/unix/vpn.md)
 - dev
