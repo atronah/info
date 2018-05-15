@@ -12,14 +12,14 @@ Paths
 
 SETLOCAL
 --------
-`SETLOCAL` at the beggining of the batch file to prevent changes in global enviroment. See `SETLOCAL /?` to details.
 
 ### Localization environment changes
 
+`SETLOCAL` at the beggining of the batch file to prevent changes in global environment. See `SETLOCAL /?` to details.
 
 additional arguments:
 - `ENABLEEXTENSIONS` \ `DISABLEEXTENSIONS` - enable\disable command processor extensions.
-- `ENABLEDELAYEDEXPANSION`  \ `DISABLEDELAYEDEXPANSION` - enable\disable delayed enviroment variable expansion.
+- `ENABLEDELAYEDEXPANSION`  \ `DISABLEDELAYEDEXPANSION` - enable\disable delayed environment variable expansion.
 
 ECHO
 ----
