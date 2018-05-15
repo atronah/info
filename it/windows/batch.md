@@ -20,6 +20,9 @@ SETLOCAL
 additional arguments:
 - `ENABLEEXTENSIONS` \ `DISABLEEXTENSIONS` - enable\disable command processor extensions.
 - `ENABLEDELAYEDEXPANSION`  \ `DISABLEDELAYEDEXPANSION` - enable\disable delayed environment variable expansion.
+Using `!var!` instead `%var%` when enabled, to get current value of variable in blocks `( ... )` instead of pre-evaluated value.
+([info source](https://stackoverflow.com/questions/22278456/enable-and-disable-delayed-expansion-what-does-it-do/22278518))
+
 
 ECHO
 ----
