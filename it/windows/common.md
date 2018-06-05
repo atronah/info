@@ -4,6 +4,7 @@ Network
 ## route
 
 - `route.exe ADD –p 10.1.1.0 MASK 255.255.255.0 192.168.1.1 METRIC 1` - command to add static route for target IP `10.1.1.0/24`  through gateway `192.168.1.1`.
+    ([source](http://help.telecom.by/faq/faq/routes/)).
     - `-p` - permanent (to prevent clearing added route after reboot)
 
 ## netstat
@@ -69,6 +70,21 @@ Cannot be removed:
 - Microsoft Edge
 - Windows Feedback
 
+
+## Force remove language
+
+Step 1. Getting list of languages:
+`Get-WinUserLanguageList`
+
+Step 2. Remove language (you have to replace `<languagecode>` by LanguageTag from list of languages of Step 1)
+
+```
+$LangList = Get-WinUserLanguageList
+$MarkedLang = $LangList | where LanguageTag -eq "<languagecode>"
+$LangList.Remove($MarkedLang)
+
+Set-WinUserLanguageList $LangList -Force
+```
 
 
 
