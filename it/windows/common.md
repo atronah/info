@@ -1,4 +1,3 @@
-
 CLI
 ===
 
@@ -19,11 +18,11 @@ Uninstall Windows 10’s Built-in Apps
 [source](https://www.howtogeek.com/224798/how-to-uninstall-windows-10s-built-in-apps-and-how-to-reinstall-them/)
 
 To remove built-in apps by PowerShell you need use command `Remove-AppxPackage`.
-Argeument for this command can be obtained `Get-AppxPackage <name_template>`.
+Argument for this command can be obtained `Get-AppxPackage <name_template>`.
 
 For example: `Get-AppxPackage <name_template> | Remove-AppxPackage`
 
-Recomended name templates for some applications:
+Recommended name templates for some applications:
 
 - `*3dbuilder*` - 3D Builder
 - `*windowsalarms*` - Alarms and Clock
