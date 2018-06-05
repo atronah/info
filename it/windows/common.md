@@ -1,3 +1,16 @@
+Network
+=======
+
+## route
+
+- `route.exe ADD –p 10.1.1.0 MASK 255.255.255.0 192.168.1.1 METRIC 1` - command to add static route for target IP `10.1.1.0/24`  through gateway `192.168.1.1`.
+    - `-p` - permanent (to prevent clearing added route after reboot)
+
+## netstat
+
+- `netstat -an | find "1234"` - check port `1234`
+
+
 CLI
 ===
 
