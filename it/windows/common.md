@@ -86,6 +86,16 @@ $LangList.Remove($MarkedLang)
 Set-WinUserLanguageList $LangList -Force
 ```
 
+### Extra keyboard layout problem
+
+- Remove one of the key from registry branch `HKEY_USERS\.DEFAULT\Keyboard Layout\Preload` and reboot.
+([source](https://answers.microsoft.com/en-us/windows/forum/windows_10-start-winpc/cant-remove-a-keyboard-layout-in-windows-10/058acf33-16d9-47f4-a24b-245b8823d90e))
+    - `809` is for UK
+    - `409` is for US
+    - `419` is for Russian
+- Add key `IgnoreRemoteKeyboardLayout` with value `1` into registry branch `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout`
+([source](https://answers.microsoft.com/ru-ru/windows/forum/windows_10-other_settings-winpc/%D1%83%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C/4389627e-abb0-4c79-8498-b77c11ac214b))
+
 
 
 Other
