@@ -144,6 +144,13 @@ for i in *.tif; do mv -i $i `basename $i .tif`; done
 ```
 
 
+### fail2ban
+
+- `fail2ban status` - list of all jails
+- `/var/log/fail2ban.log` - default log file
+- `/var/log/secure` - default log file for `ssh-iptables` jail
+- `fail2ban set ssh-iptables unbanip 111.222.333.444` - unban ip `111.222.333.444` for jail `ssh-iptables`
+
 Processes
 ---------
 
