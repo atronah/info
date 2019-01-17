@@ -1,6 +1,17 @@
 Classic Server
 ==============
 
+## Convert RedDatabase 2.5 to Firebird 3.0
+
+To restore backup which was made on RedDatabase 2.5 on Firebird 3.0 you should remove all unsupported user privileges from system table `RDB$USER_PRIVILEGES`
+(and you can do it only from connection to RedDatabase, i.e. before backuping).
+
+`delete from RDB$USER_PRIVILEGES where RDB$OBJECT_TYPE > 13`
+
+if you can connect to source rdb-database, you can do backup with gbak from Firebird 3.0.
+if you have only backup, to you can try restore it to Firebird 2.5 (that version ignore unsupported types) and after that backup it by gbak from Firebird 3.0 and restore to Firebird 3.0.
+
+
 Install on unix
 ---------------
 ### install support package xinetd
