@@ -125,6 +125,17 @@ netstat -avp | grep 3050
 ```
 
 
+### Port forwarding
+
+command bellow forwards all TCP connections to local port `9999` to remote port `5678` of remote address `1.2.3.4`
+
+```
+socat tcp-listen:9999,reuseaddr,fork tcp:1.2.3.4:5678
+```
+
+
+
+
 Files
 -----
 - `lsof -a -d 1-999 -c <command name>` - This will list all open files in the / directory,
