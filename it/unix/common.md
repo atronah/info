@@ -127,7 +127,7 @@ netstat -avp | grep 3050
 
 ### Port forwarding
 
-command bellow forwards all TCP connections to local port `9999` to remote port `5678` of remote address `1.2.3.4`
+command bellow forwards all TCP connections to local port `9999` to remote port `5678` of remote address `1.2.3.4` ([source](https://unix.stackexchange.com/questions/10428/simple-way-to-create-a-tunnel-from-one-local-port-to-another#187038))
 
 ```
 socat tcp-listen:9999,reuseaddr,fork tcp:1.2.3.4:5678
