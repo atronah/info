@@ -151,6 +151,18 @@ where:
 - `<other metadata>` - tags for search, meta data for various parsers
 
 
+check leaks
+-----------
+
+[source](https://habr.com/ru/post/459552/)
+
+```
+pip install gittyleaks 
+gittyleaks --find-anything
+
+git log --diff-filter=D --summary
+```
+
 -----------------
 
 
