@@ -1,3 +1,52 @@
+# Garbage Collecting (sweep)
+
+Garbage collecting, also known as sweep, is removing no longer required versions of records
+(versions of records are considered as no longer required when there is no active transaction, which need it).
+
+Garbage collecting usualy happens during regular reading (eg `select`)
+and manual sweep works as `select`-query from all tables in dataabase.
+
+There are 4 counters about transactions:
+
+- Oldest transaction
+- Oldest active
+- Oldest snapshot
+- Next transaction
+
+In defaults forced garbage collecting runs every time, when difference between `Oldest transaction` and `Oldest active` is more then `20000` (default `sweep interval`).
+After that `Oldest transaction` moves to `Oldest active`.
+
+If there is no active transaction in database, all transaction counters moves to `Next transaction`.
+
+
+For example (from real tesing), there is database with the following counters:
+
+- Oldest transaction: 4500
+- Oldest active: 5500
+- Oldest snapshot: 5500
+- Next transaction: 6500
+
+After manual sweep counters became:
+
+- Oldest transaction: 5500
+- Oldest active: 5500
+- Oldest snapshot: 5500
+- Next transaction: 6500
+
+After disconnect all by `gfix -shut -force 0` and manual sweep counters became:
+
+- Oldest transaction: 6500
+- Oldest active: 6500
+- Oldest snapshot: 6500
+- Next transaction: 6500
+
+
+To manual garbage collecting use
+```
+gfix -user <USER> -pas <PASSWORD> -sweep <database_path_or_alias>
+```
+
+
 Classic Server
 ==============
 
@@ -33,7 +82,7 @@ default conf file (`/etc/xinetd.d/firebirg`) contains:
 # description: FirebirdSQL server
 #
 # Be careful when commenting out entries in this file. Active key entry should
-# be the first as some scripts (CSchangeRunUser.sh in particular) use sed 
+# be the first as some scripts (CSchangeRunUser.sh in particular) use sed
 # scripting to modify it.
 
 service gds_db
@@ -76,11 +125,11 @@ service gds_db
 
 Notes:
 - to enable remote access, comment `bind 127.0.0.1` line or change ip from `127.0.0.1` to `0.0.0.0`. Maybe it is unnecessary.
-- with used `log_on_success` and `log_on_failure` you can have trouble with slowly connections from Windows clients. 
+- with used `log_on_success` and `log_on_failure` you can have trouble with slowly connections from Windows clients.
 That's why I recomend comment it.
 
 ### after install
-- open 3050 port: 
+- open 3050 port:
     - in `firebird.conf` (`/etc/firebird/firebird.conf`): uncommet `RemoteServicePort=3050` line
     - in firewall:
         - firewalld: `firewall-cmd --zone=FedoraServer --permanent --add-port=3050/tcp && firewall-cmd --reload`)
