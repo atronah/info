@@ -136,6 +136,19 @@ socat tcp-listen:9999,reuseaddr,fork tcp:1.2.3.4:5678
 ```
 
 
+### Get external ip
+
+from [source](https://unix.stackexchange.com/questions/22615/how-can-i-get-my-external-ip-address-in-a-shell-script):
+
+- `dig @resolver1.opendns.com ANY myip.opendns.com +short`
+(may be useful adding `alias wanip='dig @resolver1.opendns.com ANY myip.opendns.com +short'` into `bashrc` to use just `wanip` instead)
+- `externalip dns`
+- `curl -s l2.io/ip`
+    - `http://whatismyip.akamai.com/` - the fastest using HTTP:
+    - `https://4.ifcfg.me/` - the fastest using HTTPS with a valid cert
+    - `http://ident.me/`
+    - `http://curlmyip.com/`
+    - `http://ifconfig.me/`
 
 
 Files
