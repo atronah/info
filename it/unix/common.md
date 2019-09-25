@@ -56,11 +56,11 @@ Networking
 
 ### WiFi by NetworkManager (CLI)
 
-- `nmcli radio wifi` - check wifi enabled 
-- `nmcli device wifi rescan` - rescan available wireless networks 
+- `nmcli radio wifi` - check wifi enabled
+- `nmcli device wifi rescan` - rescan available wireless networks
 - `nmcli device wifi list` - show available wireless networks
 - `nmcli device wifi connect <SSID> password <password>` - connect to wireless network with SSID <SSID>
-- `nmcli device set <DEVICE> autoconnect yes` - enable `autoconnect` feature for device `<DEVICE>` 
+- `nmcli device set <DEVICE> autoconnect yes` - enable `autoconnect` feature for device `<DEVICE>`
 (name of device can be obtained by `nmcli device`)
 
 ### disable IPv6
@@ -78,7 +78,7 @@ sysctl -p
 
 [by modprobe](http://linoxide.com/linux-how-to/disable-ipv6-centos-fedora-rhel/):
 - `echo "install ipv6 /bin/true" >> /etc/modprobe.d/disable_ipv6.conf` - dummy install (need reboot after changes)
- 
+
 
 
 adds options into `/etc/sysconfig/network`
@@ -169,7 +169,7 @@ Processes
 
 ### get PID by process name
 
-- `pgrep <process_name>` 
+- `pgrep <process_name>`
 - `ps -ef | awk '$8=="name_of_process" {print $2}'`
 - `ps aux || awk 'NR==1 || /name_of_process/'`
 
