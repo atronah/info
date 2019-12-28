@@ -72,6 +72,17 @@ Install on unix
 - `dnf install firebird-classic` - install on RedHat
 - `apt-get install firebird2.5-classic` - install on Debian
 
+
+### recomended setups
+
+(from chat with [red-soft](red-soft.ru) developers)
+
+- disable `huge transparent pages`
+- file system for ssd: `noatime,discard,nobarrier`
+    - hdd without `nodiscard` too
+    - `nobarrier` rewuired for ext4
+
+
 ### xinetd conf
 
 sometimes, firebird package doesn't install config file for `xinetd` with itslef.
