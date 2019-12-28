@@ -78,6 +78,7 @@ Install on unix
 (from chat with [red-soft](red-soft.ru) developers)
 
 - disable `huge transparent pages`
+(e.g. write `echo never > /sys/kernel/mm/redhat_transparent_hugepage/enabled` into `/etc/rc.local`
 - file system for ssd: `noatime,discard,nobarrier`
     - hdd without `nodiscard` too
     - `nobarrier` rewuired for ext4
