@@ -42,6 +42,10 @@ add line `username    ALL=(ALL)   ALL` into `sudoers` file.
 
 add line `username    ALL=(ALL)   NOPASSWD: ALL` into `sudoers` file.
 
+### allow user to use sudo without password only for du and ping
+
+add line `username ALL=(ALL) NOPASSWD:/usr/bin/du,/usr/bin/ping` into `sudoers` file.
+
 
 Services
 --------
