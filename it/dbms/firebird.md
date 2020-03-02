@@ -1,3 +1,29 @@
+# Encoding
+
+## String Constants in Hexadecimal Notation
+
+Example:
+
+```sql
+select 'first line' || x'0d0a' || 'second line' from rdb$database
+```
+
+But, be careful with encoding?
+because as says [official documentation](https://firebirdsql.org/file/documentation/reference_manuals/fblangref25-en/html/fblangref25-commons-expressions.html):
+
+> Strings entered this way will have character set OCTETS by default but the introducer syntax can be used to force a string to be interpreted as another character set.
+To prevent encoding troubles
+recomends using introducer syntax to explicit specifying encoding:
+
+Therefore, it would be more correct to use the following query (for utf8 strings):
+
+```sql
+select 'first line' || _utf8 x'0d0a' || 'second line' from rdb$database
+```
+
+
+
+
 # Garbage Collecting (sweep)
 
 Garbage collecting, also known as sweep, is removing no longer required versions of records
