@@ -72,6 +72,8 @@ Index
     - [smb.md](it/unix/smb.md)
     - [bash](it/unix/bash.md)
     - [vpn](it/unix/vpn.md)
+- macos
+    - [common](it/mac/common.md)
 - dev
     - [python](it/dev/python.md)
     - [xml](it/dev/xml.md)
