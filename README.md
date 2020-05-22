@@ -51,6 +51,7 @@ A collection of useful information about different things
 
 - apps
     - [7z](it/apps/7z.md)
+    - [Sublime Text](it/apps/sublime.md)
 - windows
     - [common](it/windows/common.md)
     - [batch](it/windows/batch.md)
