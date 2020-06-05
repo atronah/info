@@ -1,5 +1,4 @@
-Authentification by key (without password)
-------------------------------------------
+## Authentification by key (without password)
 
 ### Common
 
@@ -18,6 +17,7 @@ Create `authorized_keys` file:
 
 
 ### From windows
+
 - use `puttygen.exe` app from `PuTTY`-tools to generate RSA key pair:
 private (`.ppk`-file) and public (`.pub` or any other).
 - copy your public key (`.pub` file) to remote host, for example, by WinSCP
@@ -28,14 +28,15 @@ private (`.ppk`-file) and public (`.pub` or any other).
 
 
 
-Forwarding ports
-----------------
+## Forwarding ports
 
 ### From remote to local
 
-- `ssh -R bind_address:remote_port:host:port user@remote_host` - forward all packets to `bind_address:remote_port` on `remote_host` side to `host:port` on local size.
+- `ssh -R bind_address:remote_port:host:port user@remote_host` - forward all packets
+to `bind_address:remote_port` on `remote_host` side to `host:port` on local size.
 
 Notes from [superuser.com](https://superuser.com/questions/588591/how-to-make-ssh-tunnel-open-to-public):
+
 - `ssh -R \*:8080:localhost:80 -N root@example.com` - binds to all interfaces individually
 - `ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com` - creates a general IPv4-only bind, which means that the port is accessible on all interfaces via IPv4.
 - `ssh -R "[::]:8080:localhost:80" -N root@example.com` - probably technically equivalent to the first, but again it creates only a single bind to ::,
@@ -43,12 +44,17 @@ which means that the port is accessible via IPv6 natively and via IPv4 through I
 (You need the quotes because [::] could be interpreted as a glob otherwise.)
 
 about not-lo `bind_address`:
+
 > Note that if you use OpenSSH sshd server, the server's `GatewayPorts` option needs to be enabled
 > (set to yes or clientspecified) for this to work (check file `/etc/ssh/sshd_config` on the server).
 > Otherwise (default value for this option is no), the server will always force the port to be bound on the loopback interface only.
 
+
 ### Use ssh_config
-If you want to forward port every time when you connect to host `my_host`, you can describe it in `ssh_config` file:
+
+If you want to forward port every time when you connect to host `my_host`,
+you can describe it in `ssh_config` file:
+
 ```
 Host my_host
         HostName=my_host.ru
@@ -62,12 +68,15 @@ Host my_host
 ```
 
 ### Permanent ssh
-to prevent losing connection you can use `autossh` utility, which monitoring connection and reconnect if it need
+
+to prevent losing connection you can use `autossh` utility,
+which monitoring connection and reconnect if it need
+
 ```
 autossh -M 20000 -f -N my_host
 ```
 
 
-Links
-=====
+# Links
+
 - [How to setup ssh tunnel to forward ssh?](https://serverfault.com/questions/33283/how-to-setup-ssh-tunnel-to-forward-ssh)
