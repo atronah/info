@@ -77,6 +77,54 @@ autossh -M 20000 -f -N my_host
 ```
 
 
+## Sharing internet through ssh
+
+[source](https://serverfault.com/questions/950352/share-internet-from-windows-machine-to-a-linux-machine-through-ssh)
+
+### Initial
+
+- `noinet_server` - unix server withour access to the internet
+- `proxy_server:8888` - http proxy server (I used 3proxy on aws ec2)
+- `inet_server` - unix/win machine with access to the internet and with ssh access to `noinet_server`
+
+
+### Seting up
+
+connect `inet_server` from to `noinet_server`
+with tunneling all requests to its `127.0.0.1:8080` to `proxy_server:8888`:
+
+```
+[inet_server]$ ssh -R 8080:proxy_server:8888 user@noinet_server
+```
+
+check that we have no access to the internet from `noinet_server`
+```
+[noinet_server]$ curl -vv http://serverfault.com
+```
+
+set enviroments to enable using http/https proxy with using `user` and `password`
+(remember, we use ssh tunnel `127.0.0.1:8080 -> proxy_server:8888`):
+
+```
+export http_proxy="http://user:password@127.0.0.1:8080"
+export https_proxy=$http_proxy
+```
+
+check that we have got access to the internet from `noinet_server`
+```
+[noinet_server]$ curl -vv http://serverfault.com
+```
+
+
+to make yum using it add following lines to `/etc/yum.conf`
+
+```
+proxy=http://user:password@127.0.0.1:8080
+proxy_username=user
+proxy_password=password
+```
+
+
 # Links
 
 - [How to setup ssh tunnel to forward ssh?](https://serverfault.com/questions/33283/how-to-setup-ssh-tunnel-to-forward-ssh)
