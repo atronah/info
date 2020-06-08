@@ -1,5 +1,4 @@
-bash using
-----------
+## bash using
 
 ### Get previos command with the same prefix
 
@@ -20,14 +19,12 @@ edit `~/.inputrc` and add following lines:
 Dot as command is equivalent to `source` command.
 
 
-Commands
---------
+## Commands
 
 - `type -a <command>` - display all locations containing an executable named `<command>`;
 
 
-sudo
-----
+## sudo
 
 Preferred way to edit `sudoers` (`/etc/sudoers`) is use command
 `sudo visudo -f /etc/sudoers.d/my_override`.
@@ -38,25 +35,31 @@ Preferred way to edit `sudoers` (`/etc/sudoers`) is use command
 
 add line `username    ALL=(ALL)   ALL` into `sudoers` file.
 
+
 ### allow user use sudo without password
 
 add line `username    ALL=(ALL)   NOPASSWD: ALL` into `sudoers` file.
+
 
 ### allow user to use sudo without password only for du and ping
 
 add line `username ALL=(ALL) NOPASSWD:/usr/bin/du,/usr/bin/ping` into `sudoers` file.
 
 
-Services
---------
+## Services
 
 ### services autorun
-```systemctl is-enabled <service-name>```
-```systemctl enable <service-name>```
+
+```
+systemctl is-enabled <service-name>
+```
+
+```
+systemctl enable <service-name>
+```
 
 
-Networking
-----------
+## Networking
 
 ### WiFi by NetworkManager (CLI)
 
@@ -67,11 +70,13 @@ Networking
 - `nmcli device set <DEVICE> autoconnect yes` - enable `autoconnect` feature for device `<DEVICE>`
 (name of device can be obtained by `nmcli device`)
 
+
 ### disable IPv6
 
 - `lsmod | grep ipv6` -- shows modules
 
 [by sysctl](https://www.nbalonso.com/disable-ipv6-on-fedora-20/):
+
 - `sysctl -a | grep ipv6 | less` - checks
 - `sysctl -w net.ipv6.conf.all.disable_ipv6=1` - The easiest ways is to set the value with sysctl itself
 - The second and a bit longer way is to write the change to /etc/sysctl.conf and then ask sysctl to read the config file. You can do it with:
@@ -81,11 +86,13 @@ sysctl -p
 ```
 
 [by modprobe](http://linoxide.com/linux-how-to/disable-ipv6-centos-fedora-rhel/):
+
 - `echo "install ipv6 /bin/true" >> /etc/modprobe.d/disable_ipv6.conf` - dummy install (need reboot after changes)
 
 
 
 adds options into `/etc/sysconfig/network`
+
 ```
 NETWORKING_IPV6=no
 IPV6INIT=no
@@ -107,13 +114,17 @@ firewall-cmd --permanent --direct --add-rule ipv6 filter INPUT 0 -p gre -j ACCEP
 firewall-cmd --reload
 ```
 
+
 ### Open port by iptables
+
 ```
 iptables -I INPUT -p tcp --dport 25 -m state --state NEW -j ACCEPT
 service iptables save
 ```
 
+
 ### Open port by firewall-cmd
+
 ```
 firewall-cmd --zone=FedoraServer --permanent --add-port=3050/tcp
 firewall-cmd --reload
@@ -122,6 +133,7 @@ firewall-cmd --info-zone=FedoraServer
 
 
 ### Check ports listening
+
 ```
 lsof -i :3050
 ```
@@ -133,7 +145,9 @@ netstat -avp | grep 3050
 
 ### Port forwarding
 
-command bellow forwards all TCP connections to local port `9999` to remote port `5678` of remote address `1.2.3.4` ([source](https://unix.stackexchange.com/questions/10428/simple-way-to-create-a-tunnel-from-one-local-port-to-another#187038))
+command bellow forwards all TCP connections to local port `9999`
+to remote port `5678` of remote address `1.2.3.4`
+([source](https://unix.stackexchange.com/questions/10428/simple-way-to-create-a-tunnel-from-one-local-port-to-another#187038))
 
 ```
 socat tcp-listen:9999,reuseaddr,fork tcp:1.2.3.4:5678
@@ -155,8 +169,8 @@ from [source](https://unix.stackexchange.com/questions/22615/how-can-i-get-my-ex
     - `http://ifconfig.me/`
 
 
-Files
------
+## Files
+
 - `lsof -a -d 1-999 -c <command name>` - This will list all open files in the / directory,
 which is everything on a linux filesystem.
 Just tested and it shows only REG and DIR. For info by PID use option `-p <pid>` instead `-c`.
@@ -176,7 +190,6 @@ With key `-k` you can kill all this processes.
     ```
 
 
-
 ### fail2ban
 
 - `fail2ban-client status` - list of all jails
@@ -186,8 +199,8 @@ With key `-k` you can kill all this processes.
 - `fail2ban-client -i` - enter to interactive mode
     - `status sshd` - shows status of sshd jail
 
-Processes
----------
+
+## Processes
 
 ### get PID by process name
 
@@ -195,27 +208,25 @@ Processes
 - `ps -ef | awk '$8=="name_of_process" {print $2}'`
 - `ps aux || awk 'NR==1 || /name_of_process/'`
 
-SELinux
--------
+## SELinux
 
 
-
-Gnome
-------
+## Gnome
 
 ### change Window's buttons layout
+
 - left-side: ```gconftool-2 --set /apps/metacity/general/button_layout --type string "menu:minimize,maximize,close" ```
 - right-side: ```gconftool-2 --set /apps/metacity/general/button_layout --type string "close,minimize,maximize:menu"```
 
 
 ### show all apps in system tray
+
 ```
 gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
 ```
 
 
-Locale, Keyboard layout
------------------------
+## Locale, Keyboard layout
 
 - `loadkeys <locale>` - temporary load locale for current session (for example `loadkeys us`)
 - `/etc/X11/org.conf` or `/etc/X11/xorg.conf.d/00_keyboard.conf` - permanent changing locales
