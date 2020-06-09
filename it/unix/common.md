@@ -108,11 +108,7 @@ IPV6INIT=no
 
 ### add GRE protocol to firewalld rules to use pppd
 
-```
-firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -p gre -j ACCEPT
-firewall-cmd --permanent --direct --add-rule ipv6 filter INPUT 0 -p gre -j ACCEPT
-firewall-cmd --reload
-```
+see [firewalld article](./firewalld.md)
 
 
 ### Open port by iptables
@@ -125,11 +121,7 @@ service iptables save
 
 ### Open port by firewall-cmd
 
-```
-firewall-cmd --zone=FedoraServer --permanent --add-port=3050/tcp
-firewall-cmd --reload
-firewall-cmd --info-zone=FedoraServer
-```
+see [firewalld article](./firewalld.md)
 
 
 ### Check ports listening

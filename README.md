@@ -69,6 +69,7 @@ A collection of useful information about different things
     - [smb.md](it/unix/smb.md)
     - [bash](it/unix/bash.md)
     - [vpn](it/unix/vpn.md)
+    - [firewalld](it/unix/firewalld.md)
 - macos
     - [common](it/mac/common.md)
 - dev
