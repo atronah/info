@@ -1,5 +1,7 @@
-Best practices
-==============
+# Bash
+
+
+## Best practices
 
 ### Shebang
 
