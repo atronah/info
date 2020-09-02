@@ -11,6 +11,13 @@ firewall-cmd --get-active-zones
 ```
 
 
+### see all rules for all zones
+
+```
+firewall-cmd --list-all-zones
+```
+
+
 ### set default zone
 
 ```
