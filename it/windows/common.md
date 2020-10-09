@@ -22,6 +22,14 @@ Copying files
 and to prevent asking about object type ([source](http://stackoverflow.com/questions/4283312/batch-file-asks-for-file-or-folder))
 
 
+Check  files using
+------------------
+
+- `openfiles /local` - check status of support loca files
+    - if `disabled` use `openfiles /local on` and `restart`
+- `openfiles /query /fo table | find /I $path_to_file`
+
+
 PowerShell
 ==========
 
