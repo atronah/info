@@ -1,6 +1,26 @@
-# Encoding
+# Firebird
 
-## String Constants in Hexadecimal Notation
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [Encoding](#encoding)
+    - [String Constants in Hexadecimal Notation](#string-constants-in-hexadecimal-notation)
+- [Garbage Collecting \(sweep\)](#garbage-collecting-sweep)
+- [Convert RedDatabase 2.5 to Firebird 3.0](#convert-reddatabase-25-to-firebird-30)
+- [Setup support java](#setup-support-java)
+    - [for Firebird 3.0 on Windows](#for-firebird-30-on-windows)
+- [Install on unix](#install-on-unix)
+    - [install support package xinetd](#install-support-package-xinetd)
+    - [install firebird server classic instance](#install-firebird-server-classic-instance)
+    - [recomended setups](#recomended-setups)
+    - [xinetd conf](#xinetd-conf)
+    - [after install](#after-install)
+
+<!-- /MarkdownTOC -->
+
+
+## Encoding
+
+### String Constants in Hexadecimal Notation
 
 Example:
 
@@ -24,7 +44,7 @@ select 'first line' || _utf8 x'0d0a' || 'second line' from rdb$database
 
 
 
-# Garbage Collecting (sweep)
+## Garbage Collecting (sweep)
 
 Garbage collecting, also known as sweep, is removing no longer required versions of records
 (versions of records are considered as no longer required when there is no active transaction, which need it).
@@ -73,8 +93,6 @@ gfix -user <USER> -pas <PASSWORD> -sweep <database_path_or_alias>
 ```
 
 
-Classic Server
-==============
 
 ## Convert RedDatabase 2.5 to Firebird 3.0
 
@@ -87,8 +105,7 @@ if you can connect to source rdb-database, you can do backup with gbak from Fire
 if you have only backup, to you can try restore it to Firebird 2.5 (that version ignore unsupported types) and after that backup it by gbak from Firebird 3.0 and restore to Firebird 3.0.
 
 
-Install on unix
----------------
+## Install on unix
 ### install support package xinetd
 
 - `dnf install xinetd`
