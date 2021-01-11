@@ -39,3 +39,23 @@ filename="${fullfile##*/}"
 
 - [stackoverflow](https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash),
 - ["3.5.3 Shell Parameter Expansion" on gnu.org](http://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+
+
+### remove part of string
+
+```bash
+var="abcde1234abcde"
+echo "${var#a*c} = de1234abcde" # remove all between `a` and `c`, starting from left side, shortest match
+echo "${var##a*c} = de" # remove all between `a` and `c`, starting from left side, longest match
+echo "${var%c*e} = abcde1234ab" # remove all between `c` and `e`, starting from right side, shortest match
+echo "${var%%c*e} = ab" # remove all between `c` and `e`, starting from right side, longest match
+```
+
+- `#` (lazy, shortest match) and `##` (greedy, longest match) work from the left end (beginning) of string;
+pattern should start from first symbol of string (`x*` for string `x...`)
+- `%` (lazy, shortest match) and `%%` (greedy, longest match) work from the right end;
+pattern should end with last symbol of string (`*y` for string `...y`)
+
+example: `var=93%; echo "${var%\%}"` shows `93`
+
+source: [Advanced Bash-Scripting Guide: 10.2. Parameter Substitution](https://tldp.org/LDP/abs/html/parameter-substitution.html#PSOREX1)
