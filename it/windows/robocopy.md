@@ -12,3 +12,15 @@ Windows set Archive attribute automatically after file changing.
     - `/z` - Copies files in Restart mode. Retries copying if it was interrupted. Use with `/R:<Num>`.
     - `/r:<Num>` - Specifies the number of retries on failed copies. The default value of `<Num>` is `1000000` (one million retries).
     - `/w:<SEC>` - Specifies the wait time between retries, in seconds. The default value of `<SEC>` is `30` (wait time 30 seconds).
+
+
+### copy old logs to archive folder
+
+```
+robocopy d:\source\path\to\logs d:\target\path\to\archive *.* /MOV /S /NFL /MinLAD:5
+```
+
+- `/MOV` - to move instead copy.
+- `/MinLAD:5` - move all files *except* used since 5 days
+- `/S` - move from subdirs
+- `/NFL` - no log each files to console
