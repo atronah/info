@@ -21,6 +21,11 @@ Quote from [stackoverflow](http://stackoverflow.com/questions/10376206/what-is-t
 
 ## Tips & tricks
 
+### do not put command in history
+
+If option `HISTCONTROL=ignorespace` exists in `.bashrc`
+you should put space before command to prevent putting it in history log.
+
 
 ### parts of file path
 
