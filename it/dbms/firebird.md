@@ -2,6 +2,7 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
+- [backup/restore with stdout/stdin \(without a dump file\)](#backuprestore-with-stdoutstdin-without-a-dump-file)
 - [Encoding](#encoding)
     - [String Constants in Hexadecimal Notation](#string-constants-in-hexadecimal-notation)
 - [Garbage Collecting \(sweep\)](#garbage-collecting-sweep)
@@ -15,6 +16,19 @@
 
 <!-- /MarkdownTOC -->
 
+## backup/restore with stdout/stdin (without a dump file)
+
+backup direct into archive (usefull for huge databases):
+
+```bash
+gbak -b -g -v MY_DB stdout | 7z a -si MY_DB_BACKUP.7z
+```
+
+clone database through backup/restore without a dump file:
+
+```
+gbak -b MY_DB stdout | gbak -rep stdin MY_DB_COPY
+```
 
 ## Encoding
 
