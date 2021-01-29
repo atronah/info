@@ -6,8 +6,6 @@
     - [String Constants in Hexadecimal Notation](#string-constants-in-hexadecimal-notation)
 - [Garbage Collecting \(sweep\)](#garbage-collecting-sweep)
 - [Convert RedDatabase 2.5 to Firebird 3.0](#convert-reddatabase-25-to-firebird-30)
-- [Setup support java](#setup-support-java)
-    - [for Firebird 3.0 on Windows](#for-firebird-30-on-windows)
 - [Install on unix](#install-on-unix)
     - [install support package xinetd](#install-support-package-xinetd)
     - [install firebird server classic instance](#install-firebird-server-classic-instance)
@@ -28,7 +26,7 @@ Example:
 select 'first line' || x'0d0a' || 'second line' from rdb$database
 ```
 
-But, be careful with encoding?
+But, be careful with encoding,
 because as says [official documentation](https://firebirdsql.org/file/documentation/reference_manuals/fblangref25-en/html/fblangref25-commons-expressions.html):
 
 > Strings entered this way will have character set OCTETS by default but the introducer syntax can be used to force a string to be interpreted as another character set.
