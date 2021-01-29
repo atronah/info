@@ -23,12 +23,27 @@ backup direct into archive (usefull for huge databases):
 ```bash
 gbak -b -g -v MY_DB stdout | 7z a -si MY_DB_BACKUP.7z
 ```
+where for `gbak`: `-b` - do backup, `-g` - skip garbage collection, `-v` - verbose;
+and for `7z`: `a` - add to archive, `-si` - read data from `stdin` (console)
 
 clone database through backup/restore without a dump file:
 
+```bash
+gbak -b -g -v MY_DB stdout | gbak -c -v stdin MY_DB_COPY
 ```
-gbak -b MY_DB stdout | gbak -rep stdin MY_DB_COPY
+where `-b` - do backup, `-g` - skip garbage collection, `-v` - verbose,
+`stdout` - write data into `stdout` (console) instead of file, `-c` - create database,
+`stdin` - read data from `stdin` (console) instead of file
+
+
+```bash
+7z x -so MY_DB_BACKUP.7z backup_filename_in_archive | gbak -c -v MY_DB stdin
 ```
+where for `7z`: `x` - extract files from archive, `-so` - write data to `stdout` (console);
+and for `gbak`: `-c` - create database, `-v` - verbose,
+`stdin` - read data from `stdin` (console) instead of file.
+
+
 
 ## Encoding
 
