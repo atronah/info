@@ -1,22 +1,35 @@
-.gitconfig
-----------
+# git
 
-[My version of config on GitHub](https://github.com/atronah/configs/blob/master/.gitconfig)
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [.gitconfig](#gitconfig)
+- [status](#status)
+- [gitrevisions](#gitrevisions)
+- [rebase](#rebase)
+- [double and triple dots](#double-and-triple-dots)
+- [best practices](#best-practices)
+    - [commit message](#commit-message)
+- [check leaks](#check-leaks)
+- [links](#links)
+
+<!-- /MarkdownTOC -->
+
+## .gitconfig
+
+[my version of config on GitHub](https://github.com/atronah/configs/blob/master/.gitconfig)
 
 
-status
-------
+## status
 
 [git-branch-status script](https://github.com/bill-auger/git-branch-status)
 
 
+## gitrevisions
 
-gitrevisions
-------------
 `@{u}` (“u” stands for “upstream”) it resolves to the latest commit on this branch on the remote ([merge-vs-rebase](http://mislav.net/2013/02/merge-vs-rebase/))
 - parents of commit (usual commit has only one parent, but merge can has more)
     - `<ref>^0` - commit itself
-    - `<rev>^` (equivalent `<rev>^1`) - first parent of commit 
+    - `<rev>^` (equivalent `<rev>^1`) - first parent of commit
     - `<rev>^<n>` - `<n>`th parent of commit
 - `<rev>~<n>` - `<n>`-th ancestor of commit (note that `<rev>~3` is equivalent to `<rev>^^^` (great-grandparent of of commit) or `<rev>^1^1^1`
 - specifying type of commit
@@ -25,33 +38,31 @@ gitrevisions
 - `<ref>^{/regexp}` - the youngest commit which is reachable from the `<rev>` and which is reachable from the `<rev>`
 
 
-rebase
-------
+## rebase
 see more in [git rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
-`git rebase --onto master server client` - Take the client branch, figure out the patches since it diverged from the server branch, 
+`git rebase --onto master server client` - Take the client branch, figure out the patches since it diverged from the server branch,
 and replay these patches in the client branch as if it was based directly off the master branch instead:
 ![rebasing client onto master](git_images/git_rebase_client_server.png)
 
 
-double and triple dots
-----------------------
+## double and triple dots
+
 Some images got from [StackOverflow topic](http://stackoverflow.com/questions/462974/what-are-the-differences-between-double-dot-and-triple-dot-in-git-com)
 
-| ![](git_images/git_log_doubledot_euler.png) | ![](git_images/git_log_tripledot_euler.png)     | 
+| ![](git_images/git_log_doubledot_euler.png) | ![](git_images/git_log_tripledot_euler.png)     |
 |---------------------------------------------|-------------------------------------------------|
 | ![](git_images/git_log_doubledot.png)       | ![](git_images/git_log_tripledot_branches.png)  |
-| ![](git_images/git_log_rev_list.png)        | ![](git_images/git-diff-help.png)               | 
+| ![](git_images/git_log_rev_list.png)        | ![](git_images/git-diff-help.png)               |
 
 
 -----------------
 
 
-Best practices
-==============
+## best practices
 
-commit message
---------------
+### commit message
+
 _some of rules was borrowed from [AngularJS](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md) project_
 
 Commit message have to match the pattern:
@@ -68,7 +79,7 @@ where:
 	- **ft** - A new feature
 	- **rf** - A refactoring (changes without changing behaviour)
 		- **cln** - removing files, extra spaces, blank lines, unused variables
-		- **opt** - optimisation 
+		- **opt** - optimisation
 		- **stl** - A code reformatting (removes blank lines, extra spaces, case changing, etc)
 	- **docs** - a documentation of code
 	- **sm** - A submodule changing
@@ -82,13 +93,12 @@ where:
 - `<other metadata>` - tags for search, meta data for various parsers
 
 
-check leaks
------------
+## check leaks
 
 [source](https://habr.com/ru/post/459552/)
 
 ```
-pip install gittyleaks 
+pip install gittyleaks
 gittyleaks --find-anything
 
 git log --diff-filter=D --summary
@@ -97,8 +107,8 @@ git log --diff-filter=D --summary
 -----------------
 
 
-Links
-=====
+## links
+
 - https://githowto.com/ru
 - http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/ru/ch05.html
 - https://githowto.com/ru/history
