@@ -1,8 +1,18 @@
 # Firewalld
 
+[info source](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
 
-[source](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
+- [see active zones](#see-active-zones)
+- [see all rules for all zones](#see-all-rules-for-all-zones)
+- [set default zone](#set-default-zone)
+- [get services](#get-services)
+- [list rules of zone](#list-rules-of-zone)
+- [Open port by firewall-cmd](#open-port-by-firewall-cmd)
+- [add GRE protocol to firewalld rules to use pppd](#add-gre-protocol-to-firewalld-rules-to-use-pppd)
+
+<!-- /MarkdownTOC -->
 
 ### see active zones
 

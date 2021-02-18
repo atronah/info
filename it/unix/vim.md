@@ -1,5 +1,13 @@
-vimrc
------
+# VIM
+
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [vimrc](#vimrc)
+    - [change dark blue to light blue](#change-dark-blue-to-light-blue)
+
+<!-- /MarkdownTOC -->
+
+## vimrc
 
 ### change dark blue to light blue
 

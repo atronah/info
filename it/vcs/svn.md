@@ -1,3 +1,10 @@
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [ports](#ports)
+- [show all commits of specified user](#show-all-commits-of-specified-user)
+
+<!-- /MarkdownTOC -->
+
 ### ports
 
 info from [stackoverflow.com](https://stackoverflow.com/questions/7249097/what-ports-need-to-be-open-for-tortoisesvn-to-authenticate-clear-text-and-comm):

@@ -1,3 +1,14 @@
+# Common notes for MacOS
+
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [Tips](#tips)
+    - [Move/drag window by clicling within t](#movedrag-window-by-clicling-within-t)
+
+<!-- /MarkdownTOC -->
+
+## Tips
+
 ### Move/drag window by clicling within t
 
 ([source](https://superuser.com/a/1466919),

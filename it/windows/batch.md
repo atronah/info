@@ -1,7 +1,21 @@
+# Batch/CMD sripting
+
 **tags**: windows, bat, shell
 
-Paths
------
+
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [Paths](#paths)
+    - [dirname](#dirname)
+- [SETLOCAL](#setlocal)
+    - [Localization environment changes](#localization-environment-changes)
+- [ECHO](#echo)
+    - [troubles](#troubles)
+
+<!-- /MarkdownTOC -->
+
+
+## Paths
 
 ### dirname
 
@@ -10,8 +24,7 @@ Paths
 - `%filename%\..\ ` - **need check**
 
 
-SETLOCAL
---------
+## SETLOCAL
 
 ### Localization environment changes
 
@@ -24,8 +37,7 @@ Using `!var!` instead `%var%` when enabled, to get current value of variable in 
 ([info source](https://stackoverflow.com/questions/22278456/enable-and-disable-delayed-expansion-what-does-it-do/22278518))
 
 
-ECHO
-----
+## ECHO
 
 - `echo %var%` - displays value of `VAR` if it exists, otherwise echo on\off mode state.
 - `echo:%var%` - displays value of `VAR` if it exists, otherwise empty line.

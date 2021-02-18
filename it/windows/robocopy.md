@@ -1,5 +1,15 @@
 # ROBOCOPY
 
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [arguments](#arguments)
+- [examples](#examples)
+    - [copy old logs to archive folder](#copy-old-logs-to-archive-folder)
+
+<!-- /MarkdownTOC -->
+
+
+## arguments
 
 - `/mt:<threads>` - Creates multi-threaded copies with `<threads>` threads. `<threads>` must be an integer between `1` and `128`. The default value for `<threads>` is `8`.
 The `/mt` parameter cannot be used with the /IPG and /EFSRAW parameters.
@@ -14,7 +24,9 @@ Windows set Archive attribute automatically after file changing.
     - `/w:<SEC>` - Specifies the wait time between retries, in seconds. The default value of `<SEC>` is `30` (wait time 30 seconds).
 
 
-### copy old logs to archive folder
+## examples
+
+###  copy old logs to archive folder
 
 ```
 robocopy d:\source\path\to\logs d:\target\path\to\archive *.* /MOV /S /NFL /MinLAD:5

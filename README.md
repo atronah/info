@@ -9,6 +9,19 @@ This git project intends to collect all about my others projects and useful (at 
 You can consider it as a hall of my programming world.
 
 
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [About me](#about-me)
+- [Projects](#projects)
+    - [Personal](#personal)
+    - [Work](#work)
+- [Knowledge base](#knowledge-base)
+    - [Index](#index)
+        - [IT](#it)
+
+<!-- /MarkdownTOC -->
+
+
 -----------------
 
 
@@ -34,6 +47,7 @@ You can consider it as a hall of my programming world.
 
 
 ## Work
+
 My work projects are in private repositories.
 But, if you have rights, you can find info about them [here](https://gitlab.com/mplus/info).
 

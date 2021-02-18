@@ -1,3 +1,40 @@
+# Common notes for Unix
+
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [bash using](#bash-using)
+    - [Get previos command with the same prefix](#get-previos-command-with-the-same-prefix)
+    - [Get OS ID from os-release file](#get-os-id-from-os-release-file)
+- [Commands](#commands)
+- [sudo](#sudo)
+    - [allow user use sudo](#allow-user-use-sudo)
+    - [allow user use sudo without password](#allow-user-use-sudo-without-password)
+    - [allow user to use sudo without password only for du and ping](#allow-user-to-use-sudo-without-password-only-for-du-and-ping)
+- [Services](#services)
+    - [services autorun](#services-autorun)
+- [Networking](#networking)
+    - [WiFi by NetworkManager \(CLI\)](#wifi-by-networkmanager-cli)
+    - [disable IPv6](#disable-ipv6)
+    - [TCP monitoring](#tcp-monitoring)
+    - [add GRE protocol to firewalld rules to use pppd](#add-gre-protocol-to-firewalld-rules-to-use-pppd)
+    - [Open port by iptables](#open-port-by-iptables)
+    - [Open port by firewall-cmd](#open-port-by-firewall-cmd)
+    - [Check ports listening](#check-ports-listening)
+    - [Port forwarding](#port-forwarding)
+    - [Get external ip](#get-external-ip)
+- [Files](#files)
+    - [fail2ban](#fail2ban)
+- [Processes](#processes)
+    - [get PID by process name](#get-pid-by-process-name)
+- [SELinux](#selinux)
+- [Gnome](#gnome)
+    - [change Window's buttons layout](#change-windows-buttons-layout)
+    - [show all apps in system tray](#show-all-apps-in-system-tray)
+- [Locale, Keyboard layout](#locale-keyboard-layout)
+
+<!-- /MarkdownTOC -->
+
+
 ## bash using
 
 ### Get previos command with the same prefix

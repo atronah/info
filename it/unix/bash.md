@@ -1,5 +1,17 @@
 # Bash
 
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [Best practices](#best-practices)
+    - [Shebang](#shebang)
+    - [Variables](#variables)
+- [Tips & tricks](#tips--tricks)
+    - [do not put command in history](#do-not-put-command-in-history)
+    - [parts of file path](#parts-of-file-path)
+    - [remove part of string](#remove-part-of-string)
+
+<!-- /MarkdownTOC -->
+
 
 ## Best practices
 

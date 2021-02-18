@@ -211,6 +211,7 @@ Notes:
 That's why I recomend comment it.
 
 ### after install
+
 - open 3050 port:
     - in `firebird.conf` (`/etc/firebird/firebird.conf`): uncommet `RemoteServicePort=3050` line
     - in firewall:

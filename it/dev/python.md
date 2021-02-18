@@ -1,8 +1,20 @@
-built-in
-========
+# Python
 
-open()
-------
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [built-in](#built-in)
+    - [open\(\)](#open)
+- [Microservices](#microservices)
+    - [Frameworks](#frameworks)
+    - [Articles](#articles)
+- [Environment](#environment)
+
+<!-- /MarkdownTOC -->
+
+
+## built-in
+
+### open()
 
 - `r` - Open text file for reading. The stream is positioned at the beginning of the file.
 - `r+` - Open for reading and writing. The stream is positioned at the beginning of the file.
@@ -23,22 +35,18 @@ irrespective of any intervening fseek(3) or similar.
 
 
 
-Microservices
-=============
+## Microservices
 
-Frameworks
-----------
+### Frameworks
 - Flask ([example](http://eax.me/python-flask/))
 - Falcon
 - Tornado
 
 
-Articles
---------
+### Articles
 - [Microservices with Python, RabbitMQ and Nameko](http://brunorocha.org/python/microservices-with-python-rabbitmq-and-nameko.html)
 
 
-Environment
-===========
+## Environment
 
 - `python -m venv flask` - creates virtual environment (need Python 3.4 or above)

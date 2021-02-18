@@ -1,4 +1,13 @@
-[source](https://medium.com/@nzvtrkk/настройка-socks5-proxy-на-amazon-ec2-512dbdb086da)
+# 3Proxy
+
+[info source](https://medium.com/@nzvtrkk/настройка-socks5-proxy-на-amazon-ec2-512dbdb086da)
+
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [Install](#install)
+- [Run](#run)
+
+<!-- /MarkdownTOC -->
 
 ## Install
 

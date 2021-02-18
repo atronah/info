@@ -1,41 +1,54 @@
-Network
-=======
+# Common notes for Windows
 
-## route
+<!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
+
+- [Network](#network)
+    - [route](#route)
+    - [netstat](#netstat)
+- [CLI](#cli)
+    - [Copying files](#copying-files)
+    - [Check  files using](#check-files-using)
+- [PowerShell](#powershell)
+    - [Uninstall Windows 10’s Built-in Apps](#uninstall-windows-10’s-built-in-apps)
+    - [Force remove language](#force-remove-language)
+        - [Extra keyboard layout problem](#extra-keyboard-layout-problem)
+- [Other](#other)
+
+<!-- /MarkdownTOC -->
+
+
+## Network
+
+### route
 
 - `route.exe ADD –p 10.1.1.0 MASK 255.255.255.0 192.168.1.1 METRIC 1` - command to add static route for target IP `10.1.1.0/24`  through gateway `192.168.1.1`.
     ([source](http://help.telecom.by/faq/faq/routes/)).
     - `-p` - permanent (to prevent clearing added route after reboot)
 
-## netstat
+### netstat
 
 - `netstat -an | find "1234"` - check port `1234`
 
 
-CLI
-===
+## CLI
 
-Copying files
--------------
+### Copying files
 
 - `xcopy c:\source\file.txt c:\destination\newfile.txt*` - adds star after filename to indicate that it is file (not directory) name
 and to prevent asking about object type ([source](http://stackoverflow.com/questions/4283312/batch-file-asks-for-file-or-folder))
 
 
-Check  files using
-------------------
+### Check  files using
 
 - `openfiles /local` - check status of support loca files
     - if `disabled` use `openfiles /local on` and `restart`
 - `openfiles /query /fo table | find /I $path_to_file`
 
 
-PowerShell
-==========
+## PowerShell
 
 
-Uninstall Windows 10’s Built-in Apps
-------------------------------------
+### Uninstall Windows 10’s Built-in Apps
 
 [source](https://www.howtogeek.com/224798/how-to-uninstall-windows-10s-built-in-apps-and-how-to-reinstall-them/)
 
@@ -79,7 +92,7 @@ Cannot be removed:
 - Windows Feedback
 
 
-## Force remove language
+### Force remove language
 
 Step 1. Getting list of languages:
 `Get-WinUserLanguageList`
@@ -94,7 +107,7 @@ $LangList.Remove($MarkedLang)
 Set-WinUserLanguageList $LangList -Force
 ```
 
-### Extra keyboard layout problem
+#### Extra keyboard layout problem
 
 - Remove one of the key from registry branch `HKEY_USERS\.DEFAULT\Keyboard Layout\Preload` and reboot.
 ([source](https://answers.microsoft.com/en-us/windows/forum/windows_10-start-winpc/cant-remove-a-keyboard-layout-in-windows-10/058acf33-16d9-47f4-a24b-245b8823d90e))
@@ -106,6 +119,6 @@ Set-WinUserLanguageList $LangList -Force
 
 
 
-Other
-=====
+## Other
+
 - `change port /query` - просмотр доступных портов (в том числе проброшенных через RDP)
