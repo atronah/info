@@ -213,7 +213,9 @@ With key `-k` you can kill all this processes.
     ```bash
     for i in *.tif; do mv -i $i `basename $i .tif`; done
     ```
-- removes all 7z files except 7 newest:
+- removes all 7z files except 6 newest
+(`ls -1t` - one file per line and sorts by modification time, newest first;
+`tail -n +7` - display lines starting from 7th line of input, i.e. skip first 6):
     ```bash
     for f in $(ls -1t *.7z | tail -n +7); do rm "$f"; done
     ```
