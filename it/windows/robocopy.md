@@ -34,5 +34,6 @@ robocopy d:\source\path\to\logs d:\target\path\to\archive *.* /MOV /S /NFL /MinL
 
 - `/MOV` - to move instead copy.
 - `/MinLAD:5` - move all files *except* used since 5 days
+(or `/MinLAD:20010201` to exlude files after 2001-02-01)
 - `/S` - move from subdirs
 - `/NFL` - no log each files to console
