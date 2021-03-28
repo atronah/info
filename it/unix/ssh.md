@@ -103,7 +103,7 @@ autossh -M 20000 -f -N my_host
 
 ### Initial
 
-- `noinet_server` - unix server withour access to the internet
+- `noinet_server` - unix server without access to the internet
 - `proxy_server:8888` - http proxy server (I used [3proxy](../apps/3proxy.md) on aws ec2)
 - `inet_server` - unix/win machine with access to the internet and with ssh access to `noinet_server`
 
