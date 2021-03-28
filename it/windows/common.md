@@ -8,6 +8,7 @@
 - [CLI](#cli)
     - [Copying files](#copying-files)
     - [Check  files using](#check-files-using)
+    - [RDP diagnostic](#rdp-diagnostic)
 - [PowerShell](#powershell)
     - [Uninstall Windows 10’s Built-in Apps](#uninstall-windows-10’s-built-in-apps)
     - [Force remove language](#force-remove-language)
@@ -43,6 +44,13 @@ and to prevent asking about object type ([source](http://stackoverflow.com/quest
 - `openfiles /local` - check status of support loca files
     - if `disabled` use `openfiles /local on` and `restart`
 - `openfiles /query /fo table | find /I $path_to_file`
+
+
+### RDP diagnostic
+
+- `query session` - shows users and their RDP-sessions
+- `query process /id <id>` - shows all process in RDP-session with `id = <id>`
+(you can get `id` from `query session` result)
 
 
 ## PowerShell
