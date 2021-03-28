@@ -8,6 +8,8 @@
     - [Frameworks](#frameworks)
     - [Articles](#articles)
 - [Environment](#environment)
+- [Tips & tricks](#tips--tricks)
+    - [vivisying dictionary](#vivisying-dictionary)
 
 <!-- /MarkdownTOC -->
 
@@ -50,3 +52,23 @@ irrespective of any intervening fseek(3) or similar.
 ## Environment
 
 - `python -m venv flask` - creates virtual environment (need Python 3.4 or above)
+
+
+## Tips & tricks
+
+
+### vivisying dictionary
+
+([source](http://robb.re/notes/2015-02-09-pyramid-traversal.html))
+
+```python
+import collections
+
+def vivify():
+    return collections.defaultdict(vivify)
+
+d = vivify()
+d['a']['b']['c'] = 'd'
+
+print(d['a']['b']['c'])
+```
