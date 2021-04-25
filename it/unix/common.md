@@ -239,7 +239,12 @@ With key `-k` you can kill all this processes.
 - `ps -ef | awk '$8=="name_of_process" {print $2}'`
 - `ps aux || awk 'NR==1 || /name_of_process/'`
 
+
 ## SELinux
+
+
+- `sestatus` - check status of SELinux
+- `setenforce (0|1)` - temporary disable|enable SELinux for current session
 
 
 ## Gnome
