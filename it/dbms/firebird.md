@@ -2,7 +2,9 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
-- [backup/restore with stdout/stdin \(without a dump file\)](#backuprestore-with-stdoutstdin-without-a-dump-file)
+- [tricks](#tricks)
+    - [execute queries direct from CLI](#execute-queries-direct-from-cli)
+    - [backup/restore with stdout/stdin \(without a dump file\)](#backuprestore-with-stdoutstdin-without-a-dump-file)
 - [Encoding](#encoding)
     - [String Constants in Hexadecimal Notation](#string-constants-in-hexadecimal-notation)
 - [Garbage Collecting \(sweep\)](#garbage-collecting-sweep)
@@ -16,7 +18,15 @@
 
 <!-- /MarkdownTOC -->
 
-## backup/restore with stdout/stdin (without a dump file)
+## tricks
+
+### execute queries direct from CLI
+
+
+- `echo "select count(*) from customer" | isql -user SYSDBA -pas masterkey employee` ([source](https://ib-aid.com/en/articles/how-to-execute-sql-command-with-isql-in-command-prompt/))
+
+
+### backup/restore with stdout/stdin (without a dump file)
 
 backup direct into archive (usefull for huge databases):
 
