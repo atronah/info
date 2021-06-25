@@ -16,6 +16,7 @@
     - [WiFi by NetworkManager \(CLI\)](#wifi-by-networkmanager-cli)
     - [disable IPv6](#disable-ipv6)
     - [TCP monitoring](#tcp-monitoring)
+    - [Monitor TCP Traffic on specific port](#monitor-tcp-traffic-on-specific-port)
     - [add GRE protocol to firewalld rules to use pppd](#add-gre-protocol-to-firewalld-rules-to-use-pppd)
     - [Open port by iptables](#open-port-by-iptables)
     - [Open port by firewall-cmd](#open-port-by-firewall-cmd)
@@ -141,6 +142,14 @@ IPV6INIT=no
 ### TCP monitoring
 
 `tcpdump`
+
+
+### Monitor TCP Traffic on specific port
+
+[source](https://superuser.com/questions/604998/monitor-tcp-traffic-on-specific-port/848966#848966)
+
+- `sudo iptables -I INPUT -p tcp --dport 443 --syn -j LOG --log-prefix "HTTPS SYN: "` and check syslog after it.
+Note that the `LOG` target is a non-terminating target, which means that any rules following it will still be evaluated, and the packet will not be either rejected or accepted by the `LOG` rule itself. This makes the `LOG` target useful also for debugging firewall rules.
 
 
 ### add GRE protocol to firewalld rules to use pppd
