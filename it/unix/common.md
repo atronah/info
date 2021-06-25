@@ -242,9 +242,12 @@ With key `-k` you can kill all this processes.
 
 ## SELinux
 
-
+- `getenforce` - get current SELinux status
+    - `Disabled` - if non-active
+    - `Enforced` - if active with enforced policies
+    - `Permissive` - if active with non-permissive policies (only DAC)
 - `sestatus` - check status of SELinux
-- `setenforce (0|1)` - temporary disable|enable SELinux for current session
+- `setenforece [Enforcing | Permissive | 1 | 0]` - temporary enable/disable for the current session
 
 
 ## Gnome
