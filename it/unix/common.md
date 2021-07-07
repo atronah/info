@@ -32,6 +32,8 @@
     - [change Window's buttons layout](#change-windows-buttons-layout)
     - [show all apps in system tray](#show-all-apps-in-system-tray)
 - [Locale, Keyboard layout](#locale-keyboard-layout)
+- [Troubleshooting](#troubleshooting)
+    - [process kswapd uses a lot of CPU](#process-kswapd-uses-a-lot-of-cpu)
 
 <!-- /MarkdownTOC -->
 
@@ -279,3 +281,17 @@ gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
 - `loadkeys <locale>` - temporary load locale for current session (for example `loadkeys us`)
 - `/etc/X11/org.conf` or `/etc/X11/xorg.conf.d/00_keyboard.conf` - permanent changing locales
 - `localectl` - utility to manage locales
+
+
+## Troubleshooting
+
+### process kswapd uses a lot of CPU
+
+[source](https://blog.bozdaganian.com/2019/12/21/linux-pagecache-and-kswapd/)
+
+kswapd - process wchish swaps modified pages out to the swap file.
+
+- `echo 1 > /proc/sys/vm/drop_caches` (by `root` user) or `echo 1 | sudo tee /proc/sys/vm/drop_caches` (by `sudo`-user) - cleans cashes.
+After that kswapd will have nothing to do. But, all used data should be re-cached and it can cause new perfomance problems.
+- `echo vm.swappiness=0 >> /etc/sysctl.conf` - disables swap (in fact, the real effect of thar is more complicated than just disabling swap).
+
