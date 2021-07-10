@@ -253,6 +253,7 @@ With key `-k` you can kill all this processes.
 
 ## SELinux
 
+A lot of info is from [article](https://habr.com/ru/company/kingservers/blog/209644/)
 
 - `getenforce` - get current SELinux status
     - `Disabled` - if non-active
