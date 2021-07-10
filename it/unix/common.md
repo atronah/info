@@ -267,12 +267,13 @@ With key `-k` you can kill all this processes.
     - `/var/log/audit/audit.log` - if `auditd` is running
     - `/var/log/messages.log` - if `auditd` is not running, all messages are marked by `AVC`
     - `sealert -a /var/log/audit/audit.log > /path/to/mylogfile.txt` - generates human-readable log (`sealert` is a part of GUI tools)
-- changing security context for files
+- changing security context
     - `chcon -Rv --type=httpd_sys_content /html` - recursive changes type for /html folder from `default_t` to `httpd_sys_content` to allow access for `httpd`; these changes will work after reboot, but will be reset after changing labels of file systems.
     - `semanage fcontext -a -t httpd_sys_content_t "/html(/.*)?"` adds permanent rule to assign `httpd_sys_content` to all files which match pattern `/html(/.*)?`. It will work even after changing label of file systems.
     - `restorecon -v /var/www/html/index.html` - restores security context of file to default for that directory (to `httpd_sys_content`), it is useful after moving file (`mv`), because `mv` preserve source context (in contrast `cp` uses destination context).
     - `touch /.autorelabel && reboot` - reset labels/contexts for whole file systems. If it doesn't work (for example, after update distributive) you should use `genhomedircon` before `touch`
-
+    - `semanage port -a -t http_port_t -p tcp 81`
+- `semanage port -l` - shows all ports which are managed by SELinux
 
 
 ## Gnome
