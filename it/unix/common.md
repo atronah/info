@@ -275,6 +275,11 @@ A lot of info is from [article](https://habr.com/ru/company/kingservers/blog/209
     - `touch /.autorelabel && reboot` - reset labels/contexts for whole file systems. If it doesn't work (for example, after update distributive) you should use `genhomedircon` before `touch`
     - `semanage port -a -t http_port_t -p tcp 81`
 - `semanage port -l` - shows all ports which are managed by SELinux
+- `getsebool -a` - shows list of all available pre-defined OS functions/politics to manage by SELinux
+- `setsebool -P httpd_can_network_connect on` - enables function/politic which give network access for `httpd`
+- `grep smtpd_t /var/log/audit/audit.log | audit2allow -m postgreylocal > postgreylocal.te && cat postgreylocal.te` - generates rules set for local politic for postgres based on denied access from logs
+- `grep smtpd_t /var/log/audit/audit.log | audit2allow -M postgreylocal && semodule -i postgreylocal.pp` - creates and set user module for SELinux politic based on info in audit.log
+- `semodule -l` - shows all loaded modules (`/etc/selinux/targeted/modules/active/modules/*.pp`)
 
 
 ## Gnome
