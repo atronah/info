@@ -10,6 +10,7 @@
     - [parts of file path](#parts-of-file-path)
     - [remove part of string](#remove-part-of-string)
     - [capture stdout to a variable but still display it in the console](#capture-stdout-to-a-variable-but-still-display-it-in-the-console)
+    - [process arguments/options by getopts](#process-argumentsoptions-by-getopts)
 
 <!-- /MarkdownTOC -->
 
@@ -91,4 +92,44 @@ command_result=$(echo aaa|tee >(cat - >&5))
 
 #out content of `command_result` (in quotes to preserve newline symbols)
 echo "$command_result"
+```
+
+
+### process arguments/options by getopts
+
+```bash
+usage () {
+    echo "usage: test.sh [arguments]"
+    echo ""
+    echo "arguments:"
+    echo "-v                (optional) verbose"
+    echo "-h                (optional) show this help"
+    echo "-f FILENAME       (required) specify filename to process (default 'default.file')"
+}
+
+verbose=false
+filename="default.file"
+
+# Parse arguments
+# f - required
+while getopts "v,h,f:" opt; do
+    case $opt in
+        v) verbose=true
+        ;;
+        h) usage && exit 0
+        ;;
+        f) filename="$OPTARG"
+        ;;
+        *) echo "Invalid option or its argument: -$OPTARG" >&2
+        usage && exit 1
+        ;;
+    esac
+done
+
+# remain other unprocessed arguments in "$@"
+shift "$OPTIND"
+
+if [ $verbose = true ]; then
+    echo "verbose info"
+fi
 ```
