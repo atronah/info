@@ -9,6 +9,7 @@
     - [do not put command in history](#do-not-put-command-in-history)
     - [parts of file path](#parts-of-file-path)
     - [remove part of string](#remove-part-of-string)
+    - [capture stdout to a variable but still display it in the console](#capture-stdout-to-a-variable-but-still-display-it-in-the-console)
 
 <!-- /MarkdownTOC -->
 
@@ -76,3 +77,18 @@ pattern should end with last symbol of string (`*y` for string `...y`)
 example: `var=93%; echo "${var%\%}"` shows `93`
 
 source: [Advanced Bash-Scripting Guide: 10.2. Parameter Substitution](https://tldp.org/LDP/abs/html/parameter-substitution.html#PSOREX1)
+
+
+### capture stdout to a variable but still display it in the console
+([source](https://stackoverflow.com/a/12451419))
+
+```
+# redirect 5th file descriptor to stdout
+exec 5>&1
+
+# run command `echo` and out its result to variable `command_result` and to 5th file descriptor (i.e. to stdout)
+command_result=$(echo aaa|tee >(cat - >&5))
+
+#out content of `command_result` (in quotes to preserve newline symbols)
+echo "$command_result"
+```
