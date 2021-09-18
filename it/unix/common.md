@@ -34,6 +34,8 @@
 - [Locale, Keyboard layout](#locale-keyboard-layout)
 - [Troubleshooting](#troubleshooting)
     - [process kswapd uses a lot of CPU](#process-kswapd-uses-a-lot-of-cpu)
+- [Scripts](#scripts)
+    - [Check disk space](#check-disk-space)
 
 <!-- /MarkdownTOC -->
 
@@ -316,3 +318,51 @@ kswapd - process wchish swaps modified pages out to the swap file.
 After that kswapd will have nothing to do. But, all used data should be re-cached and it can cause new perfomance problems.
 - `echo vm.swappiness=0 >> /etc/sysctl.conf` - disables swap (in fact, the real effect of thar is more complicated than just disabling swap).
 
+
+## Scripts
+
+
+### Check disk space
+
+
+```bash
+#! /usr/bin/env bash
+
+checked_path=$1
+used_in_percents=$(df -h ${checked_path} | awk 'NR>1 {print $5}')
+used_in_bytes=$(df -h ${checked_path} | awk 'NR>1 {print $3 " of " $2}')
+free_in_bytes=$(df -h ${checked_path} | awk 'NR>1 {print $4}')
+high_threshold=$2
+
+if [[ ${used_in_percents%\%} -gt ${high_threshold} ]]; then
+    echo "WARNING: on \"${checked_path}\" used more than ${high_threshold}% space (${used_in_percents}, ${used_in_bytes}, avail ${free_in_bytes})"
+fi
+```
+
+Excuting `check_disk.sh /path/to/check 90` shows `WARNING` if free space on /path/to/check more than 90%
+
+
+Can be used in pair with script to notify by telegram bot:
+
+```bash
+#! /usr/bin/env bash
+
+bot_token="123-ABC"
+# -1234 - group with RedSoft and KNPC members
+chat_id="-1234"
+message_prefix="[EXAMPLE] check_disk_space.sh:"
+api_send_message="https://api.telegram.org/bot$bot_token/sendMessage"
+
+checked_path="$1"
+space_limit=$2
+
+pushd $(dirname $0)
+
+info=`./check_disk_space.sh "$checked_path" $space_limit`
+
+if [ ! -z "$info" ]; then
+    curl -X POST -d chat_id=$chat_id -d text="$message_prefix $info" -d disable_notification="true" $api_send_message
+fi
+
+popd
+```
