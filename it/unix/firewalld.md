@@ -65,3 +65,22 @@ firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -p gre -j ACCEP
 firewall-cmd --permanent --direct --add-rule ipv6 filter INPUT 0 -p gre -j ACCEPT
 firewall-cmd --reload
 ```
+
+### create service to use Plex DLNA
+
+- get information about used port
+    - `firewall-cmd --get-denied-log` - check status of logging denied requests
+    - `firewall-cmd --set-denied-log=all` - enable logging for denied requests
+    - try to connect to the Plex DLNA from other device
+    - `journal -x -e | grep REJECT` - check rejected requests
+    - `firewall-cmd --set-denied-log=off` - disable logging
+- add new service
+    - `firewall-cmd --permanent --new-service=plex-dlna`
+    - `firewall-cmd --permanent --service=plex-dlna --add-port=32469/tcp`
+    - `firewall-cmd --permanent --zone=FedoraServer --add-service=plex-dlna`
+    - `firewall-cmd --reload`
+    
+
+
+
+
