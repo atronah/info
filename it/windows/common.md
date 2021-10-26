@@ -5,6 +5,7 @@
 - [Network](#network)
     - [route](#route)
     - [netstat](#netstat)
+    - [netsh](#netsh)
 - [CLI](#cli)
     - [Copying files](#copying-files)
     - [Check  files using](#check-files-using)
@@ -29,6 +30,13 @@
 ### netstat
 
 - `netstat -an | find "1234"` - check port `1234`
+
+
+### netsh
+
+- `netsh portproxy show all` - shows all port forwardings
+- `netsh interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=8080 connectaddress=10.11.12.13 connectport=80` - enables forwarding
+all IPv4-requests at 127.0.0.1:8080 to 10.11.12.13:80
 
 
 ## CLI
