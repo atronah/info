@@ -34,6 +34,7 @@
 - [Locale, Keyboard layout](#locale-keyboard-layout)
 - [Troubleshooting](#troubleshooting)
     - [process kswapd uses a lot of CPU](#process-kswapd-uses-a-lot-of-cpu)
+    - [warning: setlocale: LC_CTYPE: cannot change locale \(UTF-8\): No such file or directory](#warning-setlocale-lc_ctype-cannot-change-locale-utf-8-no-such-file-or-directory)
 - [Scripts](#scripts)
     - [Check disk space](#check-disk-space)
 
@@ -317,6 +318,18 @@ kswapd - process wchish swaps modified pages out to the swap file.
 - `echo 1 > /proc/sys/vm/drop_caches` (by `root` user) or `echo 1 | sudo tee /proc/sys/vm/drop_caches` (by `sudo`-user) - cleans cashes.
 After that kswapd will have nothing to do. But, all used data should be re-cached and it can cause new perfomance problems.
 - `echo vm.swappiness=0 >> /etc/sysctl.conf` - disables swap (in fact, the real effect of thar is more complicated than just disabling swap).
+
+
+### warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+
+([source](https://ma.ttias.be/warning-setlocale-lc_ctype-cannot-change-locale-utf-8-no-such-file-or-directory/))
+
+To fix, add following lines into `/etc/environment`
+
+```
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+```
 
 
 ## Scripts
