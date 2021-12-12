@@ -2,10 +2,20 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
+- [commands](#commands)
+    - [:set fileencoding](#set-fileencoding)
 - [vimrc](#vimrc)
     - [change dark blue to light blue](#change-dark-blue-to-light-blue)
 
 <!-- /MarkdownTOC -->
+
+
+## commands
+
+### :set fileencoding
+
+- `set fileencoding=utf8`
+- `set fileencoding=cp1251`
 
 ## vimrc
 
