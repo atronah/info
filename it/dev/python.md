@@ -10,6 +10,7 @@
 - [Environment](#environment)
 - [Tips & tricks](#tips--tricks)
     - [vivisying dictionary](#vivisying-dictionary)
+    - [on-default source folder](#on-default-source-folder)
 
 <!-- /MarkdownTOC -->
 
@@ -72,3 +73,59 @@ d['a']['b']['c'] = 'd'
 
 print(d['a']['b']['c'])
 ```
+
+
+### on-default source folder
+
+(source)[https://stackoverflow.com/questions/64838393/package-dir-in-setup-py-not-working-as-expected]
+
+If you have project structure like this
+
+```
+project
+    setup.py
+    my_src
+        my_package
+            __init__
+```
+
+your setup.py have to contain
+
+```
+setuptools.setup(
+package_dir={'': 'my_src'},
+packages=['my_package'])
+```
+
+and it works fine as for both regular `pip install` and editable install `pip install --editable`.
+
+
+But configuration 
+
+```
+setuptools.setup(
+package_dir={'my_package': 'my_src/my_package'},
+packages=['my_package'])
+```
+
+for the same structure 
+
+or configuration 
+
+```
+setuptools.setup(
+package_dir={'my_package': 'other_name'},
+packages=['my_package'])
+```
+
+for structure
+
+```
+project
+    setup.py
+    other_name
+        __init__
+```
+
+doesn't work for editable install `pip install --editable`, just for normal install `pip install`.
+
