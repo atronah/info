@@ -3,12 +3,41 @@
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
 - [Tips](#tips)
+    - [List all hardware network ports](#list-all-hardware-network-ports)
+    - [TFTP server](#tftp-server)
     - [Move/drag window by clicling within it](#movedrag-window-by-clicling-within-it)
     - [Touch ID for sudo in cli](#touch-id-for-sudo-in-cli)
 
 <!-- /MarkdownTOC -->
 
 ## Tips
+
+
+### List all hardware network ports
+
+[source](https://help.keenetic.com/hc/ru/articles/360018503800)
+
+
+```
+networksetup -listallhardwareports
+```
+
+### TFTP server
+
+[source](https://help.keenetic.com/hc/ru/articles/360018503800)
+
+to start
+```
+sudo launchctl load -F /System/Library/LaunchDaemons/tftp.plist
+```
+
+to stop
+
+```
+sudo launchctl unload -F /System/Library/LaunchDaemons/tftp.plist
+```
+
+folder to place files for booting by TFTP: `/private/tftpboot`
 
 ### Move/drag window by clicling within it
 
