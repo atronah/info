@@ -3,13 +3,13 @@
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
 - [Tips](#tips)
-    - [Move/drag window by clicling within t](#movedrag-window-by-clicling-within-t)
+    - [Move/drag window by clicling within it](#movedrag-window-by-clicling-within-it)
 
 <!-- /MarkdownTOC -->
 
 ## Tips
 
-### Move/drag window by clicling within t
+### Move/drag window by clicling within it
 
 ([source](https://superuser.com/a/1466919),
 [source2](http://www.mackungfu.org/UsabilityhackClickdraganywhereinmacOSwindowstomovethem))
