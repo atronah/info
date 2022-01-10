@@ -13,6 +13,7 @@
 - [Services](#services)
     - [services autorun](#services-autorun)
 - [Networking](#networking)
+    - [Monitoring network activity in real time for specific inteface](#monitoring-network-activity-in-real-time-for-specific-inteface)
     - [WiFi by NetworkManager \(CLI\)](#wifi-by-networkmanager-cli)
     - [disable IPv6](#disable-ipv6)
     - [TCP monitoring](#tcp-monitoring)
@@ -103,6 +104,18 @@ systemctl enable <service-name>
 
 
 ## Networking
+
+
+### Monitoring network activity in real time for specific inteface
+
+[source](https://help.keenetic.com/hc/ru/articles/360018503800)
+
+Monitoring for interface `en0`
+
+```
+netstat -I en0 -w1
+```
+
 
 ### WiFi by NetworkManager (CLI)
 
