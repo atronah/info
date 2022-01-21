@@ -10,7 +10,7 @@
 - [Environment](#environment)
 - [Tips & tricks](#tips--tricks)
     - [vivisying dictionary](#vivisying-dictionary)
-    - [on-default source folder](#on-default-source-folder)
+    - [non-default source folder](#non-default-source-folder)
 
 <!-- /MarkdownTOC -->
 
@@ -75,7 +75,7 @@ print(d['a']['b']['c'])
 ```
 
 
-### on-default source folder
+### non-default source folder
 
 (source)[https://stackoverflow.com/questions/64838393/package-dir-in-setup-py-not-working-as-expected]
 
