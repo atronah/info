@@ -7,7 +7,7 @@
 - [Microservices](#microservices)
     - [Frameworks](#frameworks)
     - [Articles](#articles)
-- [Environment](#environment)
+- [Virtual environment](#virtual-environment)
 - [Tips & tricks](#tips--tricks)
     - [fast way to show used pathes](#fast-way-to-show-used-pathes)
     - [vivisying dictionary](#vivisying-dictionary)
@@ -51,9 +51,23 @@ irrespective of any intervening fseek(3) or similar.
 - [Microservices with Python, RabbitMQ and Nameko](http://brunorocha.org/python/microservices-with-python-rabbitmq-and-nameko.html)
 
 
-## Environment
+## Virtual environment
 
-- `python -m venv flask` - creates virtual environment (need Python 3.4 or above)
+- by `venv` module of Python
+    - `python -v venv ./my_venv` - creates virtual environment (needs Python 3.4 or above)
+    - `source ./my_venv/bin/activate` - activate virtual environment for current shell
+    - `deactivate`
+- by [pyenv](/it/app/pyenc.md) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+    - `pyenv versions` - shows available (installed) versions
+    - `pyenv versio` - shows current version
+    - `pyenv install 3.9.6` - install new version
+    - `pyenv local 3.9.6` - use 3.9.6 for current directory. 
+    Priority ([source](https://realpython.com/intro-to-pyenv/)): 
+        - `pyenv shell` (`$PYENV_VERSION` env var)
+        - `pyenv local` (`.python-version` file)
+        - `pyenv global` (`~/.pyenv/version`)
+        - System python by system
+    - `pyenv virtualenv 3.9.6 my-virtual-env-3.9.6` - creates new copy of installed version as a virtual environment
 
 
 ## Tips & tricks
