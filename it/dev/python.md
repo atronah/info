@@ -9,6 +9,7 @@
     - [Articles](#articles)
 - [Environment](#environment)
 - [Tips & tricks](#tips--tricks)
+    - [fast way to show used pathes](#fast-way-to-show-used-pathes)
     - [vivisying dictionary](#vivisying-dictionary)
     - [non-default source folder](#non-default-source-folder)
 
@@ -56,6 +57,11 @@ irrespective of any intervening fseek(3) or similar.
 
 
 ## Tips & tricks
+
+
+### fast way to show used pathes
+
+- `python -m site`
 
 
 ### vivisying dictionary
