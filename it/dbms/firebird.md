@@ -54,6 +54,9 @@ and for `gbak`: `-c` - create database, `-v` - verbose,
 `stdin` - read data from `stdin` (console) instead of file.
 
 
+or [br.sh](https://github.com/atronah/firebird_utils/blob/master/br.sh)
+
+
 
 ## Encoding
 
