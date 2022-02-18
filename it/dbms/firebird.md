@@ -3,6 +3,7 @@
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
 - [tricks](#tricks)
+    - [skip data of some tables during backup/restore](#skip-data-of-some-tables-during-backuprestore)
     - [execute queries direct from CLI](#execute-queries-direct-from-cli)
     - [backup/restore with stdout/stdin \(without a dump file\)](#backuprestore-with-stdoutstdin-without-a-dump-file)
 - [Encoding](#encoding)
@@ -19,6 +20,38 @@
 <!-- /MarkdownTOC -->
 
 ## tricks
+
+
+### skip data of some tables during backup/restore
+
+In gbak FB 3.0 there is a common (for backup and for restore) option `-SKIP_DATA <template>`, 
+that acceprs a regular expression `<template>` as its argument 
+(the same one that is used for Firebird's `SIMILAR TO` searches).
+
+
+For example, to prevent saving data of tables `MY_TABLE` and all tables with `_LOG` suffix in the name
+you can use commands bellow:
+
+
+- in Windows cmd you should use double quotes for template
+    ```cmd
+    gbak -b -g -v -SKIP_DATA "(MY_TABLE|%_LOG)" my_database my_backup.fbk
+    ```
+- in Unix bash you should use single quotes for template
+    ```bash
+    gbak -b -g -v -SKIP_DATA '(MY_TABLE|%_LOG)' my_database my_backup.fbk
+    ```
+
+
+To check list of tables which will be skipped by `<template>`, you can use SQL-query bellow:
+
+```sql
+select
+    rdb$relation_name
+from rdb$relations
+where trim(rdb$relation_name) similar to '<template>'
+```
+
 
 ### execute queries direct from CLI
 
