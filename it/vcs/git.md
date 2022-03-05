@@ -2,7 +2,6 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
-- [backup gitlab project by api](#backup-gitlab-project-by-api)
 - [.gitconfig](#gitconfig)
 - [status](#status)
 - [gitrevisions](#gitrevisions)
@@ -11,14 +10,12 @@
 - [best practices](#best-practices)
 	- [commit message](#commit-message)
 - [check leaks](#check-leaks)
+- [GitLab](#gitlab)
+	- [curl API examples](#curl-api-examples)
 - [links](#links)
 
 <!-- /MarkdownTOC -->
 
-
-## backup gitlab project by api
-
-[gitlab_backup.sh](gitlab_backup.sh)
 
 
 ## .gitconfig
@@ -112,6 +109,33 @@ git log --diff-filter=D --summary
 ```
 
 -----------------
+
+
+## GitLab
+
+- script to backup repositories from GitLab using API: [gitlab_backup.sh](gitlab_backup.sh)
+
+
+### curl API examples
+
+
+get 20 projects available for user with `<access_token>`
+
+```
+curl --header "Authorization: Bearer <access_token>" https://gitlab.com/api/v4/projects
+```
+
+get 100 projects url where user with `<access_token>` (passed as url argument) is a member
+
+```
+curl https://gitlab.com/api/v4/projects -d access_token=<access_token> -d membership=true -d per_page=100 | grep -oP '"http_url_to_repo":\s*"\K[^"]*'
+```
+
+get 20 notes for issue `47` in project mplus/eis
+
+```
+curl -G --header "Authorization: Bearer <access_token>" https://gitlab.com/api/v4/projects/1136146/issues/47/notes
+```
 
 
 ## links
