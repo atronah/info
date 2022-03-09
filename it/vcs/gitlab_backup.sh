@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # example of using
-# ./backup.sh atronah_projects https://gitlab.com/api/v4/users/atronah/projects "${OAUTH_TOKEN}" -d per_page=100
+# ./gitlab_backup.sh atronah_projects https://gitlab.com/api/v4/users/atronah/projects "${OAUTH_TOKEN}" -d per_page=100
 
 
 BACKUP_NAME="$1"
@@ -14,7 +14,7 @@ OAUTH_TOKEN="$1"
 shift
 
 
-if [[ -n $API_RESOURCE ]] ; then
+if [[ -n $API_URL ]] ; then
     exit 1
 fi
 
