@@ -118,23 +118,36 @@ git log --diff-filter=D --summary
 
 ### curl API examples
 
+set up [access token](https://gitlab.com/-/profile/personal_access_tokens)
 
-get 20 projects available for user with `<access_token>`
-
+```shell
+gl_token=...
 ```
-curl --header "Authorization: Bearer <access_token>" https://gitlab.com/api/v4/projects
+
+get 20 projects available for user with `${gl_token}`
+
+```bash
+curl --header "Authorization: Bearer ${gl_token}" https://gitlab.com/api/v4/projects
 ```
 
-get 100 projects url where user with `<access_token>` (passed as url argument) is a member
+get 100 projects url where user with `${gl_token}` (passed as url argument) is a member
 
-```
-curl https://gitlab.com/api/v4/projects -d access_token=<access_token> -d membership=true -d per_page=100 | grep -oP '"http_url_to_repo":\s*"\K[^"]*'
+```bash
+curl https://gitlab.com/api/v4/projects -d access_token=${gl_token} -d membership=true -d per_page=100 | grep -oP '"http_url_to_repo":\s*"\K[^"]*'
 ```
 
 get 20 notes for issue `47` in project mplus/eis
 
+```bash
+curl -G --header "Authorization: Bearer ${gl_token}" https://gitlab.com/api/v4/projects/1136146/issues/47/notes
 ```
-curl -G --header "Authorization: Bearer <access_token>" https://gitlab.com/api/v4/projects/1136146/issues/47/notes
+
+
+```
+```
+
+
+```
 ```
 
 
