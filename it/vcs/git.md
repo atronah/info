@@ -12,6 +12,8 @@
 - [check leaks](#check-leaks)
 - [GitLab](#gitlab)
 	- [curl API examples](#curl-api-examples)
+- [GitHub](#github)
+	- [curl API examples](#curl-api-examples-1)
 - [links](#links)
 
 <!-- /MarkdownTOC -->
@@ -143,12 +145,41 @@ curl -G --header "Authorization: Bearer ${gl_token}" https://gitlab.com/api/v4/p
 ```
 
 
+## GitHub
+
+- script to backup repositories from GitLab using API: [githab_backup.sh](githab_backup.sh)
+
+
+### curl API examples
+
+set up [access token](https://github.com/settings/tokens)
+
 ```
+ghtoken=...
 ```
 
 
+get info about specified user (in example - about user `atronah`)
+
+```bash
+curl -u "atronah:${ghtoken}" https://api.github.com/users/atronah
 ```
+
+
+
+get info about current user (owner of token)
+
+```bash
+curl -u "atronah:${ghtoken}" https://api.github.com/user
 ```
+
+
+get all repos of user (in example - about user `atronah`)
+
+```bash
+curl -u "atronah:${ghtoken}" https://api.github.com/users/atronah/repos
+```
+
 
 
 ## links
