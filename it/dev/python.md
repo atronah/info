@@ -10,6 +10,7 @@
 - [Virtual environment](#virtual-environment)
 - [Tips & tricks](#tips--tricks)
     - [fast way to show used pathes](#fast-way-to-show-used-pathes)
+    - [installed packages](#installed-packages)
     - [vivisying dictionary](#vivisying-dictionary)
     - [non-default source folder](#non-default-source-folder)
 
@@ -59,7 +60,7 @@ irrespective of any intervening fseek(3) or similar.
     - `deactivate`
 - by [pyenv](/it/app/pyenc.md) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
     - `pyenv versions` - shows available (installed) versions
-    - `pyenv versio` - shows current version
+    - `pyenv version` - shows current version
     - `pyenv install 3.9.6` - install new version
     - `pyenv local 3.9.6` - use 3.9.6 for current directory. 
     Priority ([source](https://realpython.com/intro-to-pyenv/)): 
@@ -76,6 +77,11 @@ irrespective of any intervening fseek(3) or similar.
 ### fast way to show used pathes
 
 - `python -m site`
+
+
+### installed packages
+
+- `pip list`
 
 
 ### vivisying dictionary
