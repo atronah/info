@@ -6,6 +6,7 @@
     - [Shebang](#shebang)
     - [Variables](#variables)
 - [Tips & tricks](#tips--tricks)
+    - [inline for](#inline-for)
     - [do not put command in history](#do-not-put-command-in-history)
     - [parts of file path](#parts-of-file-path)
     - [remove part of string](#remove-part-of-string)
@@ -34,6 +35,12 @@ Quote from [stackoverflow](http://stackoverflow.com/questions/10376206/what-is-t
 
 
 ## Tips & tricks
+
+### inline for
+
+- ```for i in *.tif; do mv -i $i `basename $i .tif`; done```
+- ```for f in $(ls -1t *.7z | tail -n +7); do rm "$f"; done```
+
 
 ### do not put command in history
 
