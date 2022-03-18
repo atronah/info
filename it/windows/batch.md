@@ -5,6 +5,7 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
+- [inline for](#inline-for)
 - [Dates and times](#dates-and-times)
 - [Paths](#paths)
     - [dirname](#dirname)
@@ -15,6 +16,10 @@
 
 <!-- /MarkdownTOC -->
 
+
+## inline for
+
+- ```for /f %f in ('dir /b c:\') do echo %f```
 
 ## Dates and times
 
