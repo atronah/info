@@ -2,6 +2,8 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
+- [troubleshooting](#troubleshooting)
+    - [XNET error: XNET server initialization failed. Probably another instance of server is already running.](#xnet-error-xnet-server-initialization-failed-probably-another-instance-of-server-is-already-running)
 - [tricks](#tricks)
     - [skip data of some tables during backup/restore](#skip-data-of-some-tables-during-backuprestore)
     - [execute queries direct from CLI](#execute-queries-direct-from-cli)
@@ -18,6 +20,19 @@
     - [after install](#after-install)
 
 <!-- /MarkdownTOC -->
+
+
+## troubleshooting
+
+### XNET error: XNET server initialization failed. Probably another instance of server is already running.
+
+[source](https://sourceforge.net/p/firebird/mailman/message/33455309/)
+
+> To avoid this message you could start second instance with XNET disabled.
+> To do it, specify switch -i in command line. Of course, it will disable
+> local protocol for this instance. It is disabled in any case, btw, but you
+> can explicitly control which instance will run without XNET.
+
 
 ## tricks
 
