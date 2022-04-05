@@ -14,6 +14,7 @@
     - [MarkdownTOC](#markdowntoc)
     - [SideBarEnhancements](#sidebarenhancements)
     - [TrailingSpaces](#trailingspaces)
+    - [SQLTools](#sqltools)
 
 <!-- /MarkdownTOC -->
 
@@ -84,6 +85,15 @@ For adding file operations like `Rename file`.
 
 For removing extra spaces.
 
+
+
+### SQLTools
+
+
+[Project page on GitHub](https://github.com/mtxr/SublimeText-SQLTools)
+
+To fix encoding issue for Firebird connections,
+add `-ch {encoding}` into `cli_options.firebird.args` in `SQLTools.sublime-settings`.
 
 
 
