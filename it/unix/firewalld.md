@@ -11,6 +11,9 @@
 - [list rules of zone](#list-rules-of-zone)
 - [Open port by firewall-cmd](#open-port-by-firewall-cmd)
 - [add GRE protocol to firewalld rules to use pppd](#add-gre-protocol-to-firewalld-rules-to-use-pppd)
+- [create service to use Plex DLNA](#create-service-to-use-plex-dlna)
+- [block torrent](#block-torrent)
+    - [by iptables](#by-iptables)
 
 <!-- /MarkdownTOC -->
 
@@ -83,4 +86,50 @@ firewall-cmd --reload
 
 
 
+
+### block torrent
+
+
+([source](https://www.unixmen.com/how-to-block-bittorrent-traffic-on-your-linux-firewall/))
+
+
+```
+firewall-cmd --permanent --direct --add-rule ipv4 FORWARD -m string --algo bm --string "BitTorrent" -j DROP
+firewall-cmd --permanent --direct --add-rule ipv4 FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
+firewall-cmd --permanent --direct --add-rule ipv4 FORWARD -m string --algo bm --string "peer_id=" -j DROP
+firewall-cmd --permanent --direct --add-rule ipv4 FORWARD -m string --algo bm --string ".torrent" -j DROP
+firewall-cmd --permanent --direct --add-rule ipv4 FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
+firewall-cmd --permanent --direct --add-rule ipv4 FORWARD -m string --algo bm --string "torrent" -j DROP
+firewall-cmd --permanent --direct --add-rule ipv4 FORWARD -m string --algo bm --string "announce" -j DROP
+firewall-cmd --permanent --direct --add-rule ipv4 FORWARD -m string --algo bm --string "info_hash" -j DROP
+```
+
+#### by iptables
+
+```
+#Block Torrent
+iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
+iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
+iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
+iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
+iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
+```
+
+to persistent ([source](https://www.linux.org.ru/forum/admin/12922254)):
+
+- `yum install iptables-services`
+- `iptables-save > /etc/sysconfig/iptables`
+- `vim /etc/sysconfig/iptables-config`
+    ```
+    ...
+    IPTABLES_SAVE_ON_STOP="yes"
+    IPTABLES_SAVE_ON_RESTART="yes"
+    ...
+    ```
+- `systemctl disable firewalld.service`
+- `systemctl enable iptables.service`
+- `systemctl start iptables.service`
 
