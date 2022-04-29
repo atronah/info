@@ -2,6 +2,7 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
+- [Settings](#settings)
 - [Plugins](#plugins)
     - [A File Icon](#a-file-icon)
     - [Compare Side-By-Side](#compare-side-by-side)
@@ -17,6 +18,15 @@
     - [SQLTools](#sqltools)
 
 <!-- /MarkdownTOC -->
+
+
+## Settings
+
+- [Preferences](https://github.com/atronah/configs/blob/master/sublime_text/Preferences.sublime-settings)
+- Key bindings:
+    - [Windows](https://github.com/atronah/configs/blob/master/sublime_text/Default%20(Windows).sublime-keymap)
+    - [OSX](https://github.com/atronah/configs/blob/master/sublime_text/Default%20(OSX).sublime-keymap)
+
 
 ## Plugins
 
