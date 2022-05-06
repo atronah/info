@@ -14,6 +14,8 @@
     - [Uninstall Windows 10’s Built-in Apps](#uninstall-windows-10’s-built-in-apps)
     - [Force remove language](#force-remove-language)
         - [Extra keyboard layout problem](#extra-keyboard-layout-problem)
+- [Updates](#updates) 
+    - [Disable auto update](#disable-auto-update) 
 - [Other](#other)
 
 <!-- /MarkdownTOC -->
@@ -134,7 +136,29 @@ Set-WinUserLanguageList $LangList -Force
 ([source](https://answers.microsoft.com/ru-ru/windows/forum/windows_10-other_settings-winpc/%D1%83%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C/4389627e-abb0-4c79-8498-b77c11ac214b))
 
 
+## Updates
+
+### Disable auto update
+
+([source](https://pikabu.ru/story/kak_navsegda_otklyuchit_prinuditelnyie_obnovleniya_v_windows_10_4170820))
+
+- Win10 Pro only
+    - run `gpedit.msc`
+    - `Конфигурация компьютера -> Административные шаблоны -> Компоненты Windows -> Центр обновления Windows -> Настройка автоматического обновления`
+        - `Включено`
+        - `5 - Разрешить локальному администратору выбирать параметры`
+    - `Пуск -> параметры -> Обновления и безопасность -> Центр Обновления Windows`, `Проверить обновления`
+- Windows 10 Home Edition
+    - run `regedit`
+    - x32
+        - create section `WindowsUpdate\AU` in `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows` with parameter `AUOptions` with type `DWORD`
+        - set `5` in `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU\AUOptions`
+    - x64 - repeat x32 for `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows` 
+   
+
 
 ## Other
 
 - `change port /query` - просмотр доступных портов (в том числе проброшенных через RDP)
+
+ 
