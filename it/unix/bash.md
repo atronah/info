@@ -5,6 +5,7 @@
 - [Best practices](#best-practices)
     - [Shebang](#shebang)
     - [Variables](#variables)
+    - [Debugging](#debugging)
 - [Tips & tricks](#tips--tricks)
     - [inline for](#inline-for)
     - [do not put command in history](#do-not-put-command-in-history)
@@ -32,6 +33,17 @@ Quote from [stackoverflow](http://stackoverflow.com/questions/10376206/what-is-t
 - get part of file name ([source](https://stackoverflow.com/questions/18845814/bash-extracting-file-basename-from-long-path)):
     - `filename="${fullpath##*/}"`
     - `filename_without_extension="${fullpath%.*}"`
+
+
+### Debugging
+
+([source](https://habr.com/ru/post/666982/))
+
+to display each command and wait user input before run it, add this line after line with [shebang (`!#`)](#shebang):
+
+```bash
+trap 'echo "# $BASH_COMMAND";read' DEBUG
+```
 
 
 ## Tips & tricks
