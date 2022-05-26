@@ -2,6 +2,10 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
+- [workplace preparing](#workplace-preparing)
+    - [install git](#install-git)
+    - [install pyenv](#install-pyenv)
+    - [install python](#install-python)
 - [built-in](#built-in)
     - [open\(\)](#open)
 - [Microservices](#microservices)
@@ -15,6 +19,114 @@
     - [non-default source folder](#non-default-source-folder)
 
 <!-- /MarkdownTOC -->
+
+## workplace preparing
+
+### install git
+
+
+- CentOS 7
+    - for old git 1.8.3.1
+        ```bash
+        yum install git
+        ```
+    - for latest git ([source](https://computingforgeeks.com/how-to-install-latest-version-of-git-git-2-x-on-centos-7/), in commands bellow specified version `2.36.1`)
+        ```bash
+        yum -y remove git*
+        yum -y install epel-release
+        yum -y groupinstall "Development Tools"
+        yum -y install wget perl-CPAN gettext-devel perl-devel  openssl-devel  zlib-devel curl-devel expat-devel  getopt asciidoc xmlto docbook2X
+        ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
+        yum -y install wget
+        export VER="2.36.1"
+        wget https://github.com/git/git/archive/v${VER}.tar.gz
+        tar -xvf v${VER}.tar.gz
+        rm -f v${VER}.tar.gz
+        cd git-*
+        make configure
+        ./configure --prefix=/usr
+        make
+        make install
+        git --version
+        ```
+- Fedora 22 and later
+    ```bash
+    dnf install git
+    ```
+
+
+### install pyenv
+
+for more details see [github repo of pyenv](https://github.com/pyenv/pyenv)
+
+- Mac OS (Homebrew)
+    ```bash
+    brew update
+    brew install pyenv
+    ```
+- Unix
+    - by [installer](https://github.com/pyenv/pyenv-installer)
+        ```bash
+        curl https://pyenv.run | bash
+        ```
+    - by `git clone`
+        ```bash
+        git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+        ```
+- seting up
+    - add into `~/.bash_profile` or `~/.profile` and into `~/.bashrc`
+        ```bash
+        export PYENV_ROOT="$HOME/.pyenv"
+        command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init -)"
+        ```
+- update
+    ```bash
+    pyenv update
+    ```
+- add auto-activation
+    ```bash
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+    ```
+
+
+### install python
+
+- install requirements
+    - install openssl 1.1 from repo
+        ```
+        yum install openssl11 openssl-devel
+        ```
+    - install openssl 1.1 from source ([source](https://gist.github.com/fernandoaleman/5459173e24d59b45ae2cfc618e20fe06))
+        ```bash
+        yum install gcc perl-core pcre-devel wget zlib-devel
+        wget https://ftp.openssl.org/source/openssl-1.1.1k.tar.gz
+        tar -xzvf openssl-1.1.1k.tar.gz
+        cd openssl-1.1.1k
+        ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
+        make
+        make test
+        make install
+        ```
+    - install other requirements
+    ```bash
+    yum install bzip2-devel openssl-devel readline-devel libffi-devel curl wget
+    ```
+- install by pyenv
+    - simple
+        ```bash
+        pyenv install 3.10.4
+        ```
+    - for nonspecific openssl libraries and headers pathes
+        ```bash
+        CPPFLAGS="-I/usr/include/openssl11" \
+        LDFLAGS="-L/usr/lib64/openssl11" \
+        pyenv install 3.10.4
+        ```
+- set up as a primary python for your user account
+    ```bash
+    pyenv global 3.10.4
+    ```
 
 
 ## built-in
