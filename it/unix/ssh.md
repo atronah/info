@@ -20,6 +20,13 @@
 
 ## Authentification by key (without password)
 
+To disable password authentification add into `/etc/ssh/sshd_config` follow line:
+
+```bash
+Match User atronah
+    PasswordAuthentication no
+```
+
 ### Common
 
 Create `authorized_keys` file:
