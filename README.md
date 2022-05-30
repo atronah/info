@@ -92,5 +92,5 @@ A collection of useful information about different things
 - macos
     - [common](it/mac/common.md)
 - dev
-    - [python](it/dev/python.md)
+    - [python](it/dev/python/README.md)
     - [xml](it/dev/xml.md)
