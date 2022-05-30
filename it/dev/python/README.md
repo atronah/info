@@ -8,6 +8,7 @@
     - [install python](#install-python)
 - [built-in](#built-in)
     - [open\(\)](#open)
+- [usefull packages](#usefull-packages)
 - [Microservices](#microservices)
     - [Frameworks](#frameworks)
     - [Articles](#articles)
@@ -150,6 +151,11 @@ The stream is positioned at the end of the file.
 Subse-quent writes to the file will always end up at the then current end of file,
 irrespective of any intervening fseek(3) or similar.
 
+
+
+## usefull packages
+
+- [to work with dbf files](dbf.md)
 
 
 ## Microservices
