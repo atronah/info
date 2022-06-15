@@ -89,14 +89,16 @@ clone database through backup/restore without a dump file:
 ```bash
 gbak -b -g -v MY_DB stdout | gbak -c -v stdin MY_DB_COPY
 ```
+
 where `-b` - do backup, `-g` - skip garbage collection, `-v` - verbose,
 `stdout` - write data into `stdout` (console) instead of file, `-c` - create database,
 `stdin` - read data from `stdin` (console) instead of file
 
 
 ```bash
-7z x -so MY_DB_BACKUP.7z backup_filename_in_archive | gbak -c -v MY_DB stdin
+7z x -so MY_DB_BACKUP.7z backup_filename_in_archive | gbak -c -v stdin MY_DB
 ```
+
 where for `7z`: `x` - extract files from archive, `-so` - write data to `stdout` (console);
 and for `gbak`: `-c` - create database, `-v` - verbose,
 `stdin` - read data from `stdin` (console) instead of file.
