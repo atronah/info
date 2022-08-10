@@ -296,6 +296,9 @@ A lot of info is from [article](https://habr.com/ru/company/kingservers/blog/209
 - `grep smtpd_t /var/log/audit/audit.log | audit2allow -m postgreylocal > postgreylocal.te && cat postgreylocal.te` - generates rules set for local politic for postgres based on denied access from logs
 - `grep smtpd_t /var/log/audit/audit.log | audit2allow -M postgreylocal && semodule -i postgreylocal.pp` - creates and set user module for SELinux politic based on info in audit.log
 - `semodule -l` - shows all loaded modules (`/etc/selinux/targeted/modules/active/modules/*.pp`)
+- `ausearch -m avc -c my_service -ts recent` - looking for audit messages for service `my_service` in audit.log 
+    - `ausearch -m avc -c my_service -ts today | audit2allow` 
+    - `ausearch -c 'systemd' --raw | audit2allow -M my-systemd && semodule -i my-systemd.pp` - analizes denied access and creates new module to fix it for `systemd` command ([source of command](https://unix.stackexchange.com/questions/604679/selinux-how-to-grant-read-access); [ausearch description](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-troubleshooting-fixing_problems#sect-Security-Enhanced_Linux-Fixing_Problems-sealert_Messages))
 
 
 ## Gnome
