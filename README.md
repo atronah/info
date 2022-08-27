@@ -94,3 +94,4 @@ A collection of useful information about different things
 - dev
     - [python](it/dev/python/README.md)
     - [xml](it/dev/xml.md)
+- [How To Fix](it/how_to_fix.md)
