@@ -277,6 +277,7 @@ doesn't work for editable install `pip install --editable`, just for normal inst
 
 ### install sub-packages from git
 
+[source](https://python-packaging.readthedocs.io/en/latest/dependencies.html#packages-not-on-pypi)
 
 ```python
 requires = [
