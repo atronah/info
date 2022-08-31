@@ -18,6 +18,7 @@
     - [installed packages](#installed-packages)
     - [vivisying dictionary](#vivisying-dictionary)
     - [non-default source folder](#non-default-source-folder)
+    - [install sub-packages from git](#install-sub-packages-from git)
 
 <!-- /MarkdownTOC -->
 
@@ -273,3 +274,21 @@ project
 
 doesn't work for editable install `pip install --editable`, just for normal install `pip install`.
 
+
+### install sub-packages from git
+
+
+```python
+requires = [
+    # ...
+    'python-otrs @ git+https://github.com/ewsterrenburg/python-otrs.git@4d634a7c8ca08ab04583c29997c75bf2550bdc2a'
+]
+
+setup(
+    # ...
+    dependency_links=[
+        'git+https://github.com/ewsterrenburg/python-otrs.git@master#egg=python-otrs-0'
+    ],
+    install_requires=requires,
+)
+```
