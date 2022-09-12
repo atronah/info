@@ -85,6 +85,30 @@ Useful example for GitLab projects:
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 ```
 
+Settings recomendations:
+
+- to fix problem with replacing ` - ` (space + dash + space) by `---` (tripple dash) instead of `-` (single dash)
+modify replacement pattern in `MarkdownTOC.sublime-settings` from
+
+```json
+{
+    "pattern": "\\s+",
+    "replacement": "-"
+}
+```
+
+to
+
+```json
+{
+    "pattern": "\\s+-*\\s*",
+    "replacement": "-"
+}
+```
+
+
+
+
 
 ### SideBarEnhancements
 
