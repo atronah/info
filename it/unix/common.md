@@ -426,7 +426,7 @@ fi
 
 pushd $(dirname $0)
 
-info=`./check_disk_space.sh "$checked_path" $space_limit`
+info=$(./check_disk_space.sh "$checked_path" $space_limit)
 
 if [ ! -z "$info" ]; then
     if [[ -f "$log_file" ]]; then
@@ -439,7 +439,7 @@ if [ ! -z "$info" ]; then
 
     if (( ${minutes_after_last_send} >= ${delay_between_messages_in_min} )); then
         curl -X POST -d chat_id=$chat_id -d text="$message_prefix $info" -d disable_notification="true" $api_send_message
-        echo ${info} > ${log_file}
+        echo ${info} >> ${log_file}
     fi
 fi
 
