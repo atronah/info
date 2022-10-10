@@ -411,10 +411,11 @@ bot_token="123-ABC"
 chat_id="-1234"
 message_prefix="[EXAMPLE] check_disk_space.sh:"
 api_send_message="https://api.telegram.org/bot$bot_token/sendMessage"
-log_file="$(basename $0).log"
 
 checked_path="$1"
 space_limit=$2
+checked_path_suffix=$(echo ${checked_path} | tr -dc '[:alnum:]')
+log_file="$(basename $0)_${checked_path_suffix}.log"
 
 default_delay_between_messages_in_min=0
 delay_between_messages_in_min=${3:-${default_delay_between_messages_in_min}}
