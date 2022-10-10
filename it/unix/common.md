@@ -381,17 +381,41 @@ bot_token="123-ABC"
 chat_id="-1234"
 message_prefix="[EXAMPLE] check_disk_space.sh:"
 api_send_message="https://api.telegram.org/bot$bot_token/sendMessage"
+log_file="$(basename $0).log"
 
 checked_path="$1"
 space_limit=$2
+
+default_delay_between_messages_in_min=0
+delay_between_messages_in_min=${3:-${default_delay_between_messages_in_min}}
+if (( !($delay_between_messages_in_min >= 0 && $delay_between_messages_in_min <= 59) )); then
+    echo "3rd argument (delay_between_messages_in_min) mus be between 0 and 59. Reset to ${default_delay_between_messages_in_min}"
+    delay_between_messages_in_min=${default_delay_between_messages_in_min}
+fi
+
 
 pushd $(dirname $0)
 
 info=`./check_disk_space.sh "$checked_path" $space_limit`
 
 if [ ! -z "$info" ]; then
-    curl -X POST -d chat_id=$chat_id -d text="$message_prefix $info" -d disable_notification="true" $api_send_message
+    if [[ -f "$log_file" ]]; then
+        current_time_in_sec=$(date -u +"%s")
+        last_sending_time_in_sec=$(date -u -r ${log_file} +"%s")
+        minutes_after_last_send=$(date -u -d "0 ${cuttent_time_in_sec} sec - ${last_sending_time_in_sec} sec" +"%-M")
+    else
+        minutes_after_last_send=${delay_between_messages_in_min}
+    fi
+
+    if (( ${minutes_after_last_send} >= ${delay_between_messages_in_min} )); then
+        curl -X POST -d chat_id=$chat_id -d text="$message_prefix $info" -d disable_notification="true" $api_send_message
+        echo ${info} > ${log_file}
+    fi
 fi
 
 popd
 ```
+
+
+https://stackoverflow.com/questions/8903239/how-to-calculate-time-elapsed-in-bash-script
+https://stackoverflow.com/questions/2013547/assigning-default-values-to-shell-variables-with-a-single-command-in-bash
