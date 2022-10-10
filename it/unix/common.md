@@ -37,6 +37,8 @@
     - [process kswapd uses a lot of CPU](#process-kswapd-uses-a-lot-of-cpu)
     - [warning: setlocale: LC_CTYPE: cannot change locale \(UTF-8\): No such file or directory](#warning-setlocale-lc_ctype-cannot-change-locale-utf-8-no-such-file-or-directory)
 - [Scripts](#scripts)
+    - [Check time differences](#check-time-differences)
+    - [Default value for variable](#default-value-for-variable)
     - [Check disk space](#check-disk-space)
 
 <!-- /MarkdownTOC -->
@@ -350,6 +352,34 @@ LC_ALL=en_US.utf-8
 
 ## Scripts
 
+### Check time differences
+
+[source](https://stackoverflow.com/questions/8903239/how-to-calculate-time-elapsed-in-bash-script)
+
+```bash
+# string times
+string1="10:33:56"
+string2="10:36:10"
+# convert string times to seconds since 1970-01-01 00:00:00 UTC
+StartDate=$(date -u -d "$string1" +"%s")
+FinalDate=$(date -u -d "$string2" +"%s")
+# get time differenece and print it in "%H:%M:%S" format, in that example command will echo "00:03:46"
+date -u -d "0 $FinalDate sec - $StartDate sec" +"%H:%M:%S"
+```
+
+
+### Default value for variable
+
+[source](https://stackoverflow.com/questions/2013547/assigning-default-values-to-shell-variables-with-a-single-command-in-bash)
+
+```
+def_val=123
+
+# my_var will be initialized by value from $1 argument if it passed or by `123` if not (passed)
+my_var={$1:-${def_val}}
+```
+
+
 
 ### Check disk space
 
@@ -417,5 +447,5 @@ popd
 ```
 
 
-https://stackoverflow.com/questions/8903239/how-to-calculate-time-elapsed-in-bash-script
-https://stackoverflow.com/questions/2013547/assigning-default-values-to-shell-variables-with-a-single-command-in-bash
+
+
