@@ -93,5 +93,6 @@ A collection of useful information about different things
     - [common](it/mac/common.md)
 - dev
     - [python](it/dev/python/README.md)
+        - [IMAP](it/dev/python/imap.md)
     - [xml](it/dev/xml.md)
 - [How To Fix](it/how_to_fix.md)
