@@ -18,6 +18,8 @@
     - [recomended setups](#recomended-setups)
     - [xinetd conf](#xinetd-conf)
     - [after install](#after-install)
+- [unexpected behaviour](#unexpected-behaviour)
+    - [lose data by using cursor](#lose-data-by-using-cursor)
 
 <!-- /MarkdownTOC -->
 
@@ -281,3 +283,44 @@ That's why I recomend comment it.
         - firewalld: `firewall-cmd --zone=FedoraServer --permanent --add-port=3050/tcp && firewall-cmd --reload`)
         - iptables: `iptables -I INPUT -p tcp --dport 3050 -m state --state NEW -j ACCEPT && service iptable save`
 - restart `xinetd` daemon (i.e. `systemctl restart xinetd`)
+
+
+## unexpected behaviour
+
+### lose data by using cursor
+
+
+```
+/*
+create table my_table (data_id bigint, first_field varchar(32), second_field varchar(32));
+insert into my_table (data_id, first_field, second_field) values (1, null, null);
+*/
+
+execute block
+returns (
+    tmp1 type of column my_table.first_field
+    , tmp2 type of column my_table.first_field
+)
+as
+declare data_id type of column my_table.data_id;
+begin
+    for select data_id
+        from my_table
+        where data_id = 1
+        into data_id
+        as cursor my_cursor
+    do
+    begin
+        update my_table set first_field = 'test_data' where data_id = :data_id;
+
+        tmp1 = (select first_field from my_table where data_id = :data_id);
+
+        update my_table
+            set second_field = 'some value'
+            where current of my_cursor;
+        tmp2 = (select first_field from my_table where data_id = :data_id);
+
+        suspend; -- tmp1 = 'test_data'; tmp2 = null
+    end
+end
+```
