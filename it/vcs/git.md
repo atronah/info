@@ -61,6 +61,8 @@ Some images got from [StackOverflow topic](http://stackoverflow.com/questions/46
 | ![](git_images/git_log_doubledot.png)       | ![](git_images/git_log_tripledot_branches.png)  |
 | ![](git_images/git_log_rev_list.png)        | ![](git_images/git-diff-help.png)               |
 
+P.S.: [nice description from StackOverflow](https://stackoverflow.com/questions/36433572/how-does-ancestry-path-work-with-git-log)
+
 
 -----------------
 
