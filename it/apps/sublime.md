@@ -3,6 +3,7 @@
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
 - [Settings](#settings)
+    - [usefull](#usefull)
 - [Plugins](#plugins)
     - [A File Icon](#a-file-icon)
     - [Compare Side-By-Side](#compare-side-by-side)
@@ -13,6 +14,7 @@
     - [Markdown Code Blocks](#markdown-code-blocks)
     - [Markdown Editing](#markdown-editing)
     - [MarkdownTOC](#markdowntoc)
+    - [PackageResourceViewer](#packageresourceviewer)
     - [SideBarEnhancements](#sidebarenhancements)
     - [TrailingSpaces](#trailingspaces)
     - [SQLTools](#sqltools)
@@ -26,6 +28,11 @@
 - Key bindings:
     - [Windows](https://github.com/atronah/configs/blob/master/sublime_text/Default%20(Windows).sublime-keymap)
     - [OSX](https://github.com/atronah/configs/blob/master/sublime_text/Default%20(OSX).sublime-keymap)
+
+
+### usefull
+
+- [Rainbow colors by JSON object level with any color scheme](https://forum.sublimetext.com/rainbow-colors-by-json-object-level-with-any-color-scheme/42968)
 
 
 ## Plugins
@@ -107,7 +114,9 @@ to
 ```
 
 
+### PackageResourceViewer
 
+...
 
 
 ### SideBarEnhancements
