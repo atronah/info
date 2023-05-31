@@ -4,20 +4,13 @@
 
 - [Settings](#settings)
     - [usefull](#usefull)
-- [Plugins](#plugins)
-    - [A File Icon](#a-file-icon)
+- [Used packages](#used-packages)
+- [Notes about packages](#notes-about-packages)
     - [Compare Side-By-Side](#compare-side-by-side)
-    - [Git](#git)
-    - [Git Blame](#git-blame)
-    - [Indent XML](#indent-xml)
-    - [JSON Reindent](#json-reindent)
-    - [Markdown Code Blocks](#markdown-code-blocks)
-    - [Markdown Editing](#markdown-editing)
     - [MarkdownTOC](#markdowntoc)
     - [PackageResourceViewer](#packageresourceviewer)
-    - [SideBarEnhancements](#sidebarenhancements)
-    - [TrailingSpaces](#trailingspaces)
     - [SQLTools](#sqltools)
+    - [Not used packages](#not-used-packages)
 
 <!-- /MarkdownTOC -->
 
@@ -35,51 +28,40 @@
 - [Rainbow colors by JSON object level with any color scheme](https://forum.sublimetext.com/rainbow-colors-by-json-object-level-with-any-color-scheme/42968)
 
 
-## Plugins
+
+## Used packages
+
+- `AutoBackups`
+- [Compare Side-By-Side](#compare-side-by-side)
+- `Exalt`
+- `Git` - to manage git repos.
+- `HTML5`
+- `Indent XML`
+- `IndentX`
+- `JSONLint`
+- `JSONTree`
+- `Markdown Table Formatter`
+- `MarkdownEditing` - Main plugin with markdown tools.
+- `MarkdownPreview`
+- [MarkdownTOC](#markdowntoc)
+- `Pretty JSON`
+- `Print to HTML`
+- `Requester`
+- `SideBarEnhancements` - For adding file operations like `Rename file`.
+- `sql-fomratter`
+- [SQLTools](#sqltools)
+- `SublimeLinter-xmllint`
+- `TrailingSpaces` - For removing extra spaces.
+- `xml2json`
+- `xpath`
 
 
-### A File Icon
-
-...
+## Notes about packages
 
 
 ### Compare Side-By-Side
 
 Has problem in Sublime Text 4: opens both tabs on one side.
-
-
-### Git
-
-To manage git repos.
-
-
-
-### Git Blame
-
-...
-
-
-### Indent XML
-
-
-...
-
-
-### JSON Reindent
-
-...
-
-
-### Markdown Code Blocks
-
-To hightlight block of codes.
-
-
-### Markdown Editing
-
-Main plugin with markdown tools.
-
-
 
 
 ### MarkdownTOC
@@ -115,23 +97,8 @@ to
 
 
 ### PackageResourceViewer
-
 ...
-
-
-### SideBarEnhancements
-
-For adding file operations like `Rename file`.
-
-
-### TrailingSpaces
-
-For removing extra spaces.
-
-
-
 ### SQLTools
-
 
 [Project page on GitHub](https://github.com/mtxr/SublimeText-SQLTools)
 
@@ -140,3 +107,9 @@ add `-ch {encoding}` into `cli_options.firebird.args` in `SQLTools.sublime-setti
 
 
 
+### Not used packages
+
+- `A File Icon`
+- `Git Blame`
+- `JSON Reindent`
+- `Markdown Code Blocks` - To hightlight block of codes.
