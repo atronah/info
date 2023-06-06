@@ -9,6 +9,7 @@
 - [double and triple dots](#double-and-triple-dots)
 - [best practices](#best-practices)
 	- [commit message](#commit-message)
+- [tips and tricks](#tips-and-tricks)
 - [check leaks](#check-leaks)
 - [GitLab](#gitlab)
 	- [curl API examples](#curl-api-examples)
@@ -99,6 +100,14 @@ where:
 - `<ticket number>` - (optional) related issue number
 - `<detailed description>' - more detailed multi-line description of made changes
 - `<other metadata>` - tags for search, meta data for various parsers
+
+
+
+## tips and tricks
+
+- from [source](https://stackoverflow.com/questions/2706797/finding-what-branch-a-git-commit-came-from)
+	- `git branch -a --contains <commit>` to find branches that contains unmerged commit
+	- `git log --merges <commit>` to find a subsequent merge commit
 
 
 ## check leaks
