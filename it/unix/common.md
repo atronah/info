@@ -121,12 +121,21 @@ netstat -I en0 -w1
 
 ### WiFi by NetworkManager (CLI)
 
-- `nmcli radio wifi` - check wifi enabled
-- `nmcli device wifi rescan` - rescan available wireless networks
+[source](https://fedoraproject.org/wiki/Networking/CLI)
+
+- `nmcli general status` - display overall status of NetworkManager
+- `nmcli connection show [--active]` - display all (active) connections
+- `nmcli connection up id <connection name>` - connect to a configured connection by name
+- `nmcli connection down id <connection name>` - disconnection by name
+- `nmcli radio wifi` - check wifi status
+- `nmcli radio wifi <on|off>` - turn wifi on or off
 - `nmcli device wifi list` - show available wireless networks
+- `nmcli device wifi rescan` - rescan available wireless networks
 - `nmcli device wifi connect <SSID> password <password>` - connect to wireless network with SSID <SSID>
 - `nmcli device set <DEVICE> autoconnect yes` - enable `autoconnect` feature for device `<DEVICE>`
-(name of device can be obtained by `nmcli device`)
+- `nmcli device status` - list available devices and their status
+- `nmcli device disconnect iface <interface>` - disconnect an interface
+
 
 
 ### disable IPv6
@@ -298,8 +307,8 @@ A lot of info is from [article](https://habr.com/ru/company/kingservers/blog/209
 - `grep smtpd_t /var/log/audit/audit.log | audit2allow -m postgreylocal > postgreylocal.te && cat postgreylocal.te` - generates rules set for local politic for postgres based on denied access from logs
 - `grep smtpd_t /var/log/audit/audit.log | audit2allow -M postgreylocal && semodule -i postgreylocal.pp` - creates and set user module for SELinux politic based on info in audit.log
 - `semodule -l` - shows all loaded modules (`/etc/selinux/targeted/modules/active/modules/*.pp`)
-- `ausearch -m avc -c my_service -ts recent` - looking for audit messages for service `my_service` in audit.log 
-    - `ausearch -m avc -c my_service -ts today | audit2allow` 
+- `ausearch -m avc -c my_service -ts recent` - looking for audit messages for service `my_service` in audit.log
+    - `ausearch -m avc -c my_service -ts today | audit2allow`
     - `ausearch -c 'systemd' --raw | audit2allow -M my-systemd && semodule -i my-systemd.pp` - analizes denied access and creates new module to fix it for `systemd` command ([source of command](https://unix.stackexchange.com/questions/604679/selinux-how-to-grant-read-access); [ausearch description](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-troubleshooting-fixing_problems#sect-Security-Enhanced_Linux-Fixing_Problems-sealert_Messages))
 
 
