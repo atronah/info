@@ -69,6 +69,7 @@ A collection of useful information about different things
     - [cron](it/apps/cron.md)
     - [Sublime Text](it/apps/sublime.md)
     - [pyenv](it/apps/pyenv.md)
+    - [PyCharm](it/apps/pycharm.md)
     - [ffmpeg](it/apps/ffmpeg.md)
     - [wireguard](it/apps/wireguard.md)
 - windows
