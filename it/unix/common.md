@@ -36,6 +36,7 @@
 - [Troubleshooting](#troubleshooting)
     - [process kswapd uses a lot of CPU](#process-kswapd-uses-a-lot-of-cpu)
     - [warning: setlocale: LC_CTYPE: cannot change locale \(UTF-8\): No such file or directory](#warning-setlocale-lc_ctype-cannot-change-locale-utf-8-no-such-file-or-directory)
+    - [check libraries dependencies](#check-libraries-dependencies)
 - [Scripts](#scripts)
     - [Check time differences](#check-time-differences)
     - [Default value for variable](#default-value-for-variable)
@@ -357,6 +358,10 @@ To fix, add following lines into `/etc/environment`
 LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
 ```
+
+### check libraries dependencies
+
+- `ldd` - print shared library dependencies
 
 
 ## Scripts
