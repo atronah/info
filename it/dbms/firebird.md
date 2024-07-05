@@ -49,15 +49,10 @@ that acceprs a regular expression `<template>` as its argument
 For example, to prevent saving data of tables `MY_TABLE` and all tables with `_LOG` suffix in the name
 you can use commands bellow:
 
+```shell
+gbak -b -g -v -SKIP_DATA "(MY_TABLE|%_LOG)" my_database my_backup.fbk
+```
 
-- in Windows cmd you should use double quotes for template
-    ```cmd
-    gbak -b -g -v -SKIP_DATA "(MY_TABLE|%_LOG)" my_database my_backup.fbk
-    ```
-- in Unix bash you should use single quotes for template
-    ```bash
-    gbak -b -g -v -SKIP_DATA '(MY_TABLE|%_LOG)' my_database my_backup.fbk
-    ```
 
 
 To check list of tables which will be skipped by `<template>`, you can use SQL-query bellow:
