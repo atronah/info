@@ -7,6 +7,8 @@
     - [Install git](#install-git)
     - [Install pyenv](#install-pyenv)
     - [Install python](#install-python)
+    - [Setup project environment](#setup-project-environment)
+    - [non-default source code folder](#non-default-source-code-folder)
 - [Built-in functions](#built-in-functions)
     - [open\(\)](#open)
 - [Usefull packages](#usefull-packages)
@@ -18,7 +20,6 @@
     - [fast way to show used pathes](#fast-way-to-show-used-pathes)
     - [installed packages](#installed-packages)
     - [vivisying dictionary](#vivisying-dictionary)
-    - [non-default source folder](#non-default-source-folder)
     - [install sub-packages from git](#install-sub-packages-from-git)
 
 <!-- /MarkdownTOC -->
@@ -138,6 +139,72 @@ For more details see [github repo of pyenv](https://github.com/pyenv/pyenv)
     pyenv global 3.10.4
     ```
 
+### Setup project environment
+
+(WIP)
+
+Questions:
+
+- setuptools (`setup.py`) or poetry (pyproject.toml)? what's better?
+- best way to setup logging?
+- best way to setup database migration
+- setup docker?
+
+
+### non-default source code folder
+
+(source)[https://stackoverflow.com/questions/64838393/package-dir-in-setup-py-not-working-as-expected]
+
+If you have project structure like this
+
+```bash
+project
+    setup.py
+    my_src
+        my_package
+            __init__
+```
+
+your setup.py have to contain
+
+```py
+setuptools.setup(
+package_dir={'': 'my_src'},
+packages=['my_package'])
+```
+
+and it works fine as for both regular `pip install` and editable install `pip install --editable`.
+
+
+But configuration
+
+```python
+setuptools.setup(
+package_dir={'my_package': 'my_src/my_package'},
+packages=['my_package'])
+```
+
+for the same structure
+
+or configuration
+
+```python
+setuptools.setup(
+package_dir={'my_package': 'other_name'},
+packages=['my_package'])
+```
+
+for structure
+
+```bash
+project
+    setup.py
+    other_name
+        __init__
+```
+
+doesn't work for editable install `pip install --editable`, just for normal install `pip install`.
+
 
 ## Built-in functions
 
@@ -230,59 +297,7 @@ print(d['a']['b']['c'])
 ```
 
 
-### non-default source folder
 
-(source)[https://stackoverflow.com/questions/64838393/package-dir-in-setup-py-not-working-as-expected]
-
-If you have project structure like this
-
-```bash
-project
-    setup.py
-    my_src
-        my_package
-            __init__
-```
-
-your setup.py have to contain
-
-```py
-setuptools.setup(
-package_dir={'': 'my_src'},
-packages=['my_package'])
-```
-
-and it works fine as for both regular `pip install` and editable install `pip install --editable`.
-
-
-But configuration
-
-```python
-setuptools.setup(
-package_dir={'my_package': 'my_src/my_package'},
-packages=['my_package'])
-```
-
-for the same structure
-
-or configuration
-
-```python
-setuptools.setup(
-package_dir={'my_package': 'other_name'},
-packages=['my_package'])
-```
-
-for structure
-
-```bash
-project
-    setup.py
-    other_name
-        __init__
-```
-
-doesn't work for editable install `pip install --editable`, just for normal install `pip install`.
 
 
 ### install sub-packages from git
