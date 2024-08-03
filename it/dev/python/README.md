@@ -2,36 +2,37 @@
 
 <!-- MarkdownTOC autolink="true" lowercase="all" uri_encoding="false" -->
 
-- [workplace preparing](#workplace-preparing)
-    - [install git](#install-git)
-    - [install pyenv](#install-pyenv)
-    - [install python](#install-python)
-- [built-in](#built-in)
+- [Articles](#articles)
+- [Workplace preparing](#workplace-preparing)
+    - [Install git](#install-git)
+    - [Install pyenv](#install-pyenv)
+    - [Install python](#install-python)
+- [Built-in functions](#built-in-functions)
     - [open\(\)](#open)
-- [usefull packages](#usefull-packages)
+- [Usefull packages](#usefull-packages)
 - [Microservices](#microservices)
     - [Frameworks](#frameworks)
-    - [Articles](#articles)
+    - [Articles](#articles-1)
 - [Virtual environment](#virtual-environment)
 - [Tips & tricks](#tips--tricks)
     - [fast way to show used pathes](#fast-way-to-show-used-pathes)
     - [installed packages](#installed-packages)
     - [vivisying dictionary](#vivisying-dictionary)
     - [non-default source folder](#non-default-source-folder)
-    - [install sub-packages from git](#install-sub-packages-from git)
+    - [install sub-packages from git](#install-sub-packages-from-git)
 
 <!-- /MarkdownTOC -->
 
 
 
-## articles
+## Articles
 
 - [IMAP](imap.md)
- 
 
-## workplace preparing
 
-### install git
+## Workplace preparing
+
+### Install git
 
 
 - CentOS 7
@@ -64,9 +65,9 @@
     ```
 
 
-### install pyenv
+### Install pyenv
 
-for more details see [github repo of pyenv](https://github.com/pyenv/pyenv)
+For more details see [github repo of pyenv](https://github.com/pyenv/pyenv)
 
 - Mac OS (Homebrew)
     ```bash
@@ -99,11 +100,11 @@ for more details see [github repo of pyenv](https://github.com/pyenv/pyenv)
     ```
 
 
-### install python
+### Install python
 
 - install requirements
     - install openssl 1.1 from repo
-        ```
+        ```bash
         yum install openssl11 openssl-devel
         ```
     - install openssl 1.1 from source ([source](https://gist.github.com/fernandoaleman/5459173e24d59b45ae2cfc618e20fe06))
@@ -138,7 +139,7 @@ for more details see [github repo of pyenv](https://github.com/pyenv/pyenv)
     ```
 
 
-## built-in
+## Built-in functions
 
 ### open()
 
@@ -161,7 +162,7 @@ irrespective of any intervening fseek(3) or similar.
 
 
 
-## usefull packages
+## Usefull packages
 
 - [to work with dbf files](dbf.md)
 
@@ -169,12 +170,14 @@ irrespective of any intervening fseek(3) or similar.
 ## Microservices
 
 ### Frameworks
+
 - Flask ([example](http://eax.me/python-flask/))
 - Falcon
 - Tornado
 
 
 ### Articles
+
 - [Microservices with Python, RabbitMQ and Nameko](http://brunorocha.org/python/microservices-with-python-rabbitmq-and-nameko.html)
 
 
@@ -188,8 +191,8 @@ irrespective of any intervening fseek(3) or similar.
     - `pyenv versions` - shows available (installed) versions
     - `pyenv version` - shows current version
     - `pyenv install 3.9.6` - install new version
-    - `pyenv local 3.9.6` - use 3.9.6 for current directory. 
-    Priority ([source](https://realpython.com/intro-to-pyenv/)): 
+    - `pyenv local 3.9.6` - use 3.9.6 for current directory.
+    Priority ([source](https://realpython.com/intro-to-pyenv/)):
         - `pyenv shell` (`$PYENV_VERSION` env var)
         - `pyenv local` (`.python-version` file)
         - `pyenv global` (`~/.pyenv/version`)
@@ -233,7 +236,7 @@ print(d['a']['b']['c'])
 
 If you have project structure like this
 
-```
+```bash
 project
     setup.py
     my_src
@@ -243,7 +246,7 @@ project
 
 your setup.py have to contain
 
-```
+```py
 setuptools.setup(
 package_dir={'': 'my_src'},
 packages=['my_package'])
@@ -252,19 +255,19 @@ packages=['my_package'])
 and it works fine as for both regular `pip install` and editable install `pip install --editable`.
 
 
-But configuration 
+But configuration
 
-```
+```python
 setuptools.setup(
 package_dir={'my_package': 'my_src/my_package'},
 packages=['my_package'])
 ```
 
-for the same structure 
+for the same structure
 
-or configuration 
+or configuration
 
-```
+```python
 setuptools.setup(
 package_dir={'my_package': 'other_name'},
 packages=['my_package'])
@@ -272,7 +275,7 @@ packages=['my_package'])
 
 for structure
 
-```
+```bash
 project
     setup.py
     other_name
