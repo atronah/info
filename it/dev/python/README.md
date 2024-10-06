@@ -29,6 +29,7 @@
 ## Articles
 
 - [IMAP](imap.md)
+- [asyncio](asyncio.md)
 
 
 ## Workplace preparing
@@ -148,6 +149,7 @@ Questions:
 - setuptools (`setup.py`) or poetry (pyproject.toml)? what's better?
 - best way to setup logging?
 - best way to setup database migration
+- [asyncio](asyncio.md)
 - setup docker?
 
 
