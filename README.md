@@ -67,34 +67,34 @@ A collection of useful information about different things
     - [3Proxy](it/apps/3proxy.md)
     - [7z](it/apps/7z.md)
     - [cron](it/apps/cron.md)
-    - [fork](it/apps/fork.md)
-    - [Sublime Text](it/apps/sublime.md)
-    - [pyenv](it/apps/pyenv.md)
-    - [PyCharm](it/apps/pycharm.md)
     - [ffmpeg](it/apps/ffmpeg.md)
+    - [fork](it/apps/fork.md)
+    - [PyCharm](it/apps/pycharm.md)
+    - [pyenv](it/apps/pyenv.md)
+    - [Sublime Text](it/apps/sublime.md)
     - [wireguard](it/apps/wireguard.md)
-- windows
-    - [common](it/windows/common.md)
-    - [batch](it/windows/batch.md)
 - dbms
-    - [mysql](it/dbms/mysql.md)
     - [firebird](it/dbms/firebird.md)
-- vcs
-    - [svn](it/vcs/svn.md)
-    - [git](it/vcs/git.md)
-- unix
-    - [common](it/unix/common.md)
-    - [fedora](it/unix/fedora.md)
-    - [vim](it/unix/vim.md)
-    - [ssh](it/unix/ssh.md)
-    - [smb.md](it/unix/smb.md)
-    - [bash](it/unix/bash.md)
-    - [vpn](it/unix/vpn.md)
-    - [firewalld](it/unix/firewalld.md)
-- macos
-    - [common](it/mac/common.md)
+    - [mysql](it/dbms/mysql.md)
 - dev
     - [python](it/dev/python/README.md)
         - [IMAP](it/dev/python/imap.md)
     - [xml](it/dev/xml.md)
+- mac
+    - [common](it/mac/common.md)
+- unix
+    - [bash](it/unix/bash.md)
+    - [common](it/unix/common.md)
+    - [fedora](it/unix/fedora.md)
+    - [firewalld](it/unix/firewalld.md)
+    - [smb.md](it/unix/smb.md)
+    - [ssh](it/unix/ssh.md)
+    - [vim](it/unix/vim.md)
+    - [vpn](it/unix/vpn.md)
+- vcs
+    - [git](it/vcs/git.md)
+    - [svn](it/vcs/svn.md)
+- windows
+    - [batch](it/windows/batch.md)
+    - [common](it/windows/common.md)
 - [How To Fix](it/how_to_fix.md)
