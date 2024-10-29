@@ -67,6 +67,7 @@ A collection of useful information about different things
     - [3Proxy](it/apps/3proxy.md)
     - [7z](it/apps/7z.md)
     - [cron](it/apps/cron.md)
+    - [fork](it/apps/fork.md)
     - [Sublime Text](it/apps/sublime.md)
     - [pyenv](it/apps/pyenv.md)
     - [PyCharm](it/apps/pycharm.md)
