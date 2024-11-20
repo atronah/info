@@ -13,6 +13,8 @@
     - [Localization environment changes](#localization-environment-changes)
 - [ECHO](#echo)
     - [troubles](#troubles)
+- [Examples and snippets](#examples-and-snippets)
+    - [Split file into parts with the specified numbers of lines](#split-file-into-parts-with-the-specified-numbers-of-lines)
 
 <!-- /MarkdownTOC -->
 
@@ -78,6 +80,19 @@ Solution: use `echo[%var%` or `echo(%var%` or `echo:%var%`
 Solution: use `echo[` or `echo(` or `echo:`
 - used `echo off`, but parentheses of code blocks are displayed.
 Solution: use `call xxx.bat` instead `xxx.bat` to execute nested batch files.
+
+
+## Examples and snippets
+
+### Split file into parts with the specified numbers of lines
+
+- from [one disccussion on stackoverflow](https://stackoverflow.com/questions/23593556/batch-split-a-text-file)
+    - [split_file.cmd](batch_scripts/split_file.cmd) - hard to understand and last version from a best answer of discussion
+    (has problem with truncating line in position of `0x00` in it)
+    - [split_file_simple.cmd](batch_scripts/split_file_simple.cmd) - simplified by me version 
+    (has problem with truncating file part in position of line, that containing `0x00` character)
+    - [split_file_simple.cmd](batch_scripts/split_file_simple.cmd) - fast version from another answer of the same discuession
+    (has the same problem, as [split_file.cmd](batch_scripts/split_file.cmd): truncate each line with `0x00`)
 
 
 
