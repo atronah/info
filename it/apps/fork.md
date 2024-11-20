@@ -49,7 +49,7 @@ In scripts are used custom git aliases from [(a.configs) .gitconfig](https://git
 - Target: `Branch`
 - Action: `Bash Command`
     - Script ([info source](https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-a-bash-script)):
-        - for Windows: `echo "[(${repo:name}) ${ref:short}]($(git link)/-/tree/${ref:short})" > /dev/clipboard`
+        - for Windows: `echo "[(${repo:name}) ${ref:short}]($(git link)/tree/${ref:short})" > /dev/clipboard`
         - for MacOS: as for Windows, but `| pbcopy` instead of `> /dev/clipboard`
 
 
@@ -58,5 +58,5 @@ In scripts are used custom git aliases from [(a.configs) .gitconfig](https://git
 - Target: `File`
 - Action: `Bash Command`
     - Script ([info source](https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-a-bash-script)):
-        - for Windows: `echo "[(${repo:name}) ${file:name}]($(git link)/-/blob/${sha}/${file})" > /dev/clipboard`
+        - for Windows: `echo "[(${repo:name}) ${file:name}]($(git link)/blob/${sha}/${file})" > /dev/clipboard`
         - for MacOS: as for Windows, but `| pbcopy` instead of `> /dev/clipboard`
