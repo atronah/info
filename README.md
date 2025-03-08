@@ -71,6 +71,7 @@ A collection of useful information about different things
     - [fork](it/apps/fork.md)
     - [PyCharm](it/apps/pycharm.md)
     - [pyenv](it/apps/pyenv.md)
+    - [rsync](it/apps/rsync.md)
     - [Sublime Text](it/apps/sublime.md)
     - [wireguard](it/apps/wireguard.md)
 - dbms
