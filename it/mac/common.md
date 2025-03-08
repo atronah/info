@@ -4,6 +4,7 @@
 
 - [Tips](#tips)
     - [List all hardware network ports](#list-all-hardware-network-ports)
+    - [Disable Spotlight](#disable-spotlight)
     - [TFTP server](#tftp-server)
     - [Move/drag window by clicling within it](#movedrag-window-by-clicling-within-it)
     - [Touch ID for sudo in cli](#touch-id-for-sudo-in-cli)
@@ -21,6 +22,24 @@
 ```
 networksetup -listallhardwareports
 ```
+
+### Disable Spotlight
+
+[source](https://discussions.apple.com/thread/255756690)
+
+to disable Spotlight for some drives on macos create empty file `.metadata_never_index`:
+
+```shell
+touch /path/to/drive/.metadata_never_index
+```
+
+to remove Spotlight cache execute:
+
+```shell
+sudo mdutil -X /path/to/drive
+```
+
+
 
 ### TFTP server
 
