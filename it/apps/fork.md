@@ -31,7 +31,7 @@ In scripts are used custom git aliases from [(a.configs) .gitconfig](https://git
 - Target: `Commit`
 - Action: `Bash Command`
     - Script ([info source](https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-a-bash-script)):
-        - for Windows: `echo "[$(git log -1 --pretty="%as %h %s" ${sha})]($(git link)/commit/${sha})" > /dev/clipboard`
+        - for Windows: `echo "$(git log -1 --pretty="(%as, [%h]($(git link)/commit/${sha})" ${sha})) $(git log -1 --pretty="%s" ${sha})" | sed -r 's/\*/\\*/g' > /dev/clipboard`
         - for MacOS: as for Windows, but `| pbcopy` instead of `> /dev/clipboard`
 
 
@@ -49,7 +49,7 @@ In scripts are used custom git aliases from [(a.configs) .gitconfig](https://git
 - Target: `Commit`
 - Action: `Bash Command`
     - Script ([info source](https://stackoverflow.com/questions/749544/pipe-to-from-the-clipboard-in-a-bash-script)):
-        - for Windows: `echo "\"$(git log -1 --pretty="%as %h %s" ${sha})\":$(git link)/commit/${sha}" > /dev/clipboard`
+        - for Windows: `echo "$(git log -1 --pretty="(%as, \"%h\":$(git link)/commit/${sha})") $(git log -1 --pretty="%s" ${sha})" | sed -r 's/\*/\&#42;/g' > /dev/clipboard`
         - for MacOS: as for Windows, but `| pbcopy` instead of `> /dev/clipboard`
 
 
